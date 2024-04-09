@@ -131,7 +131,7 @@ regression_test() {
 				choose_env
 				echo -e "\nExecuting First test group...\nENV=$ENV, HEADLESS=$HEADLESS"
 				exit
-				# ./scripts/first-group.sh $ENV $HEADLESS // $ENV $HEADLESS 
+				# ./scripts/first-group.sh $ENV $HEADLESS
 				;;
 			2)
 				headfull_mode
