@@ -8,44 +8,6 @@ wrong_mode_input=true
 wrong_env_input=true
 
 # Methods 
-basic_setup_exe() {
-	#Update package list
-	echo -e "\nUpdate package list\n-------------------------------------------------------------------------------------------\n"
-	sudo apt update
-	#Install snap
-    echo -e "\nInstalling snap package system\n-------------------------------------------------------------------------------------------\n" 
-	#Install Telegram
-	echo -e "\nInstalling Telegram\n-------------------------------------------------------------------------------------------\n"
-	sudo snap install telegram-desktop
-	#Install Slack
-	echo -e "\nInstalling Slack\n-------------------------------------------------------------------------------------------\n"
-	sudo snap install slack
-}
-
-advanced_setup_exe() {
-	basic_setup_exe
-	#Install Brave
-  	echo -e "\nInstalling Brave\n-------------------------------------------------------------------------------------------"
-  	sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
-  	sudo apt install brave-browser
-
-  	#Install VS Code
-  	echo -e "\nInstalling VS code\n-------------------------------------------------------------------------------------------"
-  	sudo snap install --classic code
-
-  	#Install Postman
-  	echo -e "\nInstalling Postman\n-------------------------------------------------------------------------------------------"
-  	sudo snap install postman
-
-  	#Install Node LTS
- 	echo -e "\nInstalling Node LTS\n------------------------------------------------------------------------------------------"
-  	# Installs NVM (Node Version Manager)
-	sudo curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
-  	# Download and install Node.js
-  	nvm install 20  
-	nvm use 20
-}
-
 wrong_input() {
 	echo -e "\nPlease enter valid option!\n.\n.\n."
 	sleep 0.5
