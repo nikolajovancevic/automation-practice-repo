@@ -1,9 +1,11 @@
 #! /bin/bash
 
 # vars
-back_to_start=false
 ENV=dev
-HEADLESS=headless
+HEADLESS=true
+back_to_start=false
+wrong_mode_input=true
+wrong_env_input=true
 
 # Methods 
 basic_setup_exe() {
@@ -56,106 +58,124 @@ go_back() {
 }
 
 choose_env() {
-	echo -e "\nChoose environment: \n\n1. DEV \n2. STAGE\n"
-	read -p "Enter number: " option 
+	while [[ "$wrong_env_input" = true ]]; do
+		echo -e "\nChoose environment: \n\n1. DEV \n2. STAGE\n"
+		read -p "Enter number: " option 
 
-	case $option in
-		1)
-			echo -e "\nDEV env selected...\n"
-			ENV=dev
-			;;
-		2)
-			echo -e "\nSTAGE env selected...\n"
-			ENV=stage
-			;;
-	esac
+		case $option in
+			1)
+				echo -e "\nDEV env selected...\n"
+				ENV=dev
+				wrong_env_input=false
+				;;
+			2)
+				echo -e "\nSTAGE env selected...\n"
+				ENV=stage
+				wrong_env_input=false
+				;;
+			*)
+				wrong_input
+				;;
+		esac
+	done
 }
 
 headfull_mode() {
-	echo -e "\nChoose mode: \n\n1. HEADLESS \n2. HEADFULL\n"
-	read -p "Enter number: " option 
+	while [[ "$wrong_mode_input" = true ]]; do
+		echo -e "\nChoose mode: \n\n1. HEADLESS \n2. HEADFULL\n"
+		read -p "Enter number: " option 
 
-	case $option in
-		1)
-			echo -e "\HEADLESS mode selected...\n"
-			HEADLESS=true
-			;;
-		2)
-			echo -e "\nHEADFULL mode selected...\n"
-			HEADLESS=false
-			;;
-	esac
+		case $option in
+			1)
+				echo -e "\nHEADLESS mode selected...\n"
+				HEADLESS=true
+				wrong_mode_input=false
+				;;
+			2)
+				echo -e "\nHEADFULL mode selected...\n"
+				HEADLESS=false
+				wrong_mode_input=false
+				;;
+			*)
+				wrong_input
+				;;
+		esac
+	done
 }
 
 smoke_test() {
-		while [[ "$back_to_start" = false ]]; do	
-			echo -e ".\n.\n.\n\tSMOKE TEST OPTIONS\n-------------------------------------------------------------------------------------------\n"
-			echo -e "\nTest groups: \n\n1. Full Smoke test\n2. Metamask Smoke\n3. Home page Smoke\n4. Guest Smoke\n5. User Smoke\n0. Back\n"
-			read -p "Enter number: " option
-
-			case $option in 
-				1)
-					headfull_mode
-					choose_env
-					echo -e "\nExecuting Full Smoke...\nENV=$ENV, HEADLESS=$HEADLESS"
-					exit
-					# ./scripts/smoke.sh $ENV $HEADLESS
-					;;
-				2)
-					headfull_mode
-					choose_env
-					echo -e "\nExecuting Metamask Smoke..."
-					exit
-					# ./scripts/metamask.sh $ENV $HEADLESS
-					;;
-				3)
-					headfull_mode
-					choose_env
-					echo -e "\nExecuting Home page Smoke..."
-					exit
-					# ./scripts/homepage.sh $ENV $HEADLESS
-					;;
-				4)
-					headfull_mode
-					choose_env
-					echo -e "\nExecuting Guest Smoke..."
-					exit
-					# ./scripts/guest.sh $ENV $HEADLESS
-					;;
-				5)
-					headfull_mode
-					choose_env
-					echo -e "\nExecuting User Smoke..."
-					exit
-					# ./scripts/user.sh $ENV $HEADLESS
-					;;
-				0) 
-					go_back
-					;;
-				*)
-					wrong_input
-					;;
-			esac
-	    done
+	headfull_mode
+	choose_env
+	echo -e "\nExecuting Smoke test script...ENV=$ENV, HEADLESS=$HEADLESS"
+	exit
+	# ./scripts/smoke-test.sh $ENV $HEADLESS
 }
 
-#Main script - Test execution
+api_test() {
+	headfull_mode
+	choose_env
+	echo -e "\nExecuting API test script...ENV=$ENV, HEADLESS=$HEADLESS"
+	exit
+	# ./scripts/api-test.sh $ENV $HEADLESS
+}
+
+regression_test() {
+	while [[ "$back_to_start" = false ]]; do	
+		echo -e ".\n.\n.\n\tREGRESSION TESTS\n-------------------------------------------------------------------------------------------\n"
+		echo -e "\nTest groups: \n\n1. First test group\n2. Second test group\n3. Third test group\n0. Back\n"
+		read -p "Enter number: " option
+		
+		case $option in 
+			1)
+				headfull_mode
+				choose_env
+				echo -e "\nExecuting First test group...\nENV=$ENV, HEADLESS=$HEADLESS"
+				exit
+				# ./scripts/first-group.sh $ENV $HEADLESS // $ENV $HEADLESS 
+				;;
+			2)
+				headfull_mode
+				choose_env
+				echo -e "\nExecuting Second test group...\nENV=$ENV, HEADLESS=$HEADLESS"
+				exit
+				# ./scripts/second-group.sh $ENV $HEADLESS
+				;;
+			3)
+				headfull_mode
+				choose_env
+				echo -e "\nExecuting Third test group...\nENV=$ENV, HEADLESS=$HEADLESS"
+				exit
+				# ./scripts/third-group.sh $ENV $HEADLESS
+				;;
+			0) 
+				go_back
+				;;
+			*)
+				wrong_input
+				;;
+		esac
+    done
+}
+
+### Main script - Test execution ### 
 while true; do
   	if [ "$back_to_start" = false ]; then
+
 		sudo echo -e "\n\tMAIN MENU:\n-------------------------------------------------------------------------------------------\n\n1. Smoke\n2. Regression\n3. API\n"
 		read -p "Enter number: " option
     
 	    if [[ "$option" -eq 1 ]]; then 
-			smoke_test
+				smoke_test
+				exit
 	   	elif [[ "$option" -eq 2 ]]; then
-			echo -e "\nExecuting Regression test script...\n"
-			exit
-		elif [[ "$option" -eq 3 ]]; then
-			echo -e "\nExecuting API test script...\n"
-			exit
-		elif ! [[ "$option" -eq 1 || "$option" -eq 2 || $option -eq 3 ]]; then
-			wrong_input
-	   	else
+				regression_test				
+				exit
+			elif [[ "$option" -eq 3 ]]; then
+				api_test
+				exit
+			elif ! [[ "$option" -eq 1 || "$option" -eq 2 || $option -eq 3 ]]; then
+				wrong_input
+	  	 	else
 	     	back_to_start=false
 	  	fi
 		back_to_start=false
