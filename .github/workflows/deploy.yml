@@ -1,0 +1,15 @@
+name: Deployment scripts
+
+on:
+  workflow_dispatch:
+
+
+jobs:
+  build:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Echo stuff
+        run: echo "Running shit on a self-hosted runner"
