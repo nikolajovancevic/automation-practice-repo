@@ -68,7 +68,7 @@ headfull_mode() {
 smoke_test() {
 	headfull_mode
 	choose_env
-	echo -e "\nExecuting Smoke test script...ENV=$ENV, HEADLESS=$HEADLESS"
+	echo -e "\nExecuting Smoke test script...\nENV=$ENV, HEADLESS=$HEADLESS"
 	exit
 	# ./scripts/smoke-test.sh $ENV $HEADLESS
 }
@@ -76,7 +76,7 @@ smoke_test() {
 api_test() {
 	headfull_mode
 	choose_env
-	echo -e "\nExecuting API test script...ENV=$ENV, HEADLESS=$HEADLESS"
+	echo -e "\nExecuting API test script...\nENV=$ENV, HEADLESS=$HEADLESS"
 	exit
 	# ./scripts/api-test.sh $ENV $HEADLESS
 }
