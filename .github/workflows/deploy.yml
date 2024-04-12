@@ -11,7 +11,7 @@ jobs:
       - run: npm ci
       - run: echo "Running tests before deployment..."
 
-  deploy: 
+  deploy:
     runs-on: ubuntu-latest
     needs: test
     steps:

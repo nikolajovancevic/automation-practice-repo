@@ -37,19 +37,19 @@ advanced_setup_exe() {
   	# Installs NVM (Node Version Manager)
 	sudo curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
   	# Download and install Node.js
-  	nvm install 20  
-	nvm use 20
+  	nvm install 20
+		nvm use 20
 }
 
 wrong_input() {
 	echo -e "\nPlease enter valid option!\n.\n.\n."
-	sleep 1
+	sleep 0.5
 }
 
 return_to_start() {
 	echo -e ".\n.\n.\n\nBack to menu..."
 	back_to_start=true
-	sleep 1
+	sleep 0.5
 }
 
 basic_setup() {

@@ -70,7 +70,7 @@ smoke_test() {
 	choose_env
 	echo -e "\nExecuting Smoke test script...\nENV=$ENV, HEADLESS=$HEADLESS"
 	exit
-	# ./scripts/smoke-test.sh $ENV $HEADLESS
+	./scripts/smoke-test.sh $ENV $HEADLESS
 }
 
 api_test() {
