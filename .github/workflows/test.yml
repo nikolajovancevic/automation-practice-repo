@@ -2,16 +2,19 @@ name: Execute tests
 
 on:
   workflow_run:
-    workflows: [cache-deps]
+    workflows: ["cache-deps.yml"]
     types:
       - completed
+
 jobs:
   tests:
     runs-on: ubuntu-latest
+    
+    name: Execute tests
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        
+
       - name: Run tests
         run: echo "RUNNING TESTS NOW..."
     
