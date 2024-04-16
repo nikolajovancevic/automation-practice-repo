@@ -1,0 +1,36 @@
+name: Cache Node & Playwright dependencies
+
+on:
+  workflow_call:
+
+jobs:
+  cache-playwrigth:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Store Playwright version
+        run: |
+          PLAYWRIGHT_VERSION=$(npm ls @playwright/test | grep @playwright | sed 's/.*@//')
+          echo "Playwright version: $PLAYWRIGHT_VERSION"
+          echo "PLAYWRIGHT_VERSION=$PLAYWRIGHT_VERSION" >> $GITHUB_ENV
+
+      - name: Cache Playwright Browsers
+        uses: actions/cache@v3
+        id: cache-playwright
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-browsers-${{ secrets.PLAYWRIGHT_VERSION }}
+
+      - name: Install Playwright Browsers
+        if: steps.cache-playwright.outputs.cache-hit != true
+        run: npx playwright install --with-deps
+
+  cache-node:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Node env
+        uses: actions/setup-node@v3
+        id: cache-node
+        with:
+          node-version: 20
+          cache: "npm"
