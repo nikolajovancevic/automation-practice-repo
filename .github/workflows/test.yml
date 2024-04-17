@@ -2,7 +2,7 @@ name: Execute tests
 
 on:
   workflow_run:
-    workflows: ["cache-deps.yml"]
+    workflows: ["Cache Node & Playwright dependencies"]
     types:
       - completed
 
