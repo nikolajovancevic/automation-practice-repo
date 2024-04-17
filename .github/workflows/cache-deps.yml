@@ -36,12 +36,12 @@ jobs:
           echo "Playwright version: $PLAYWRIGHT_VERSION"
           echo "PLAYWRIGHT_VERSION=$PLAYWRIGHT_VERSION" >> $GITHUB_ENV
 
-      # - name: Cache Playwright Browsers
-      #   uses: actions/cache@v3
-      #   id: cache-playwright
-      #   with:
-      #     path: ~/.cache/ms-playwright
-      #     key: playwright-browsers-${{ secrets.PLAYWRIGHT_VERSION }}
+      - name: Cache Playwright Browsers
+        uses: actions/cache@v3
+        id: cache-playwright
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-browsers-${{ secrets.PLAYWRIGHT_VERSION }}
 
       - name: Install Playwright Browsers
         # if: steps.cache-playwright.outputs.cache-hit != true
