@@ -9,7 +9,7 @@ on:
 jobs:
   tests:
     runs-on: ubuntu-latest
-    
+
     name: Execute tests
     steps:
       - name: Checkout
@@ -17,4 +17,3 @@ jobs:
 
       - name: Run tests
         run: echo "RUNNING TESTS NOW..."
-    

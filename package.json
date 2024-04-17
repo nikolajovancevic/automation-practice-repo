@@ -1,9 +1,10 @@
 {
   "name": "automating-stuff",
   "version": "1.0.0",
-  "description": "Add permission to script if needed  ``` chmod +x [script-name] ```",
+  "description": "Add description",
   "main": "index.js",
   "scripts": {
+    "format": "npx prettier . --write",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/nikolajovancevic/automating-stuff/issues"
   },
-  "homepage": "https://github.com/nikolajovancevic/automating-stuff#readme"
+  "homepage": "https://github.com/nikolajovancevic/automating-stuff#readme",
+  "devDependencies": {
+    "prettier": "3.2.5"
+  }
 }
