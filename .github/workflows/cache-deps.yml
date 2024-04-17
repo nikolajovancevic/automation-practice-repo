@@ -18,6 +18,7 @@ jobs:
           cache: "npm"
 
   cache-playwrigth:
+    name: Setup Playwright
     runs-on: ubuntu-latest
 
     steps:
