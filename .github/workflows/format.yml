@@ -18,4 +18,4 @@ jobs:
       - name: Prettify code
         uses: creyD/prettier_action@v4.3
         with:
-          prettier_options: --write **/*.{ts,js,md,sh,yml}
+          prettier_options: --write **/*.{ts,js,md,yml}
