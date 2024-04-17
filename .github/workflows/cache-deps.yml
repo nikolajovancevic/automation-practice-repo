@@ -1,10 +1,7 @@
 name: "Cache Node & Playwright dependencies"
 
 on:
-  push:
-    branches:
-      - main
-  workflow_dispatch:
+  workflow_call:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
