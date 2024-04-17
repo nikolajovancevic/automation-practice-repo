@@ -12,11 +12,13 @@ concurrency:
 
 jobs:
   cache-node:
+    name: Setup Node env
     runs-on: ubuntu-latest
 
     steps:
-      - name: Setup Node env
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
         id: cache-node
         with:
           node-version: 20
@@ -26,6 +28,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v4
+
       - name: Store Playwright version
         run: |
           PLAYWRIGHT_VERSION=$(npm ls @playwright/test | grep @playwright | sed 's/.*@//')
