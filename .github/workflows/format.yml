@@ -19,4 +19,3 @@ jobs:
         uses: creyD/prettier_action@v4.3
         with:
           prettier_options: --write **/*.{ts,js,md,yml}
-          github_token: ${{ secrets.ACCESS_TOKEN }}
