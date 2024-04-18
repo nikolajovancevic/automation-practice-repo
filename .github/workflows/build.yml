@@ -21,7 +21,5 @@ jobs:
 
 
       - name: Build
-        run: |
-          server-output: $(npm run build)
-          echo: "CLI output: $server-output"
+        run: npm run build
 
