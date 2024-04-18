@@ -26,14 +26,15 @@ jobs:
 
       - name: Store Playwright version
         id: playwright-version
-        run: echo "PLAYWRIGHT_VERSION=$(node -e "console.log(require('./package-lock.json').dependencies['@playwright/test'].version)")" >> $GITHUB_ENV
+        run: echo "::set-output name=version::$(npm ls @playwright/test | grep @playwright | sed 's/.*@//')" 
 
       - name: Cache Playwright binnaries
         uses: actions/cache@v3
         id: cache-playwright
         with:
-          path: ~/.cache/ms-playwright
-          key: ${{ runner.os }}-playwright-${{ env.PLAYWRIGHT_VERSION }}
+          path: |
+            ~/.cache/ms-playwright
+          key: ${{ runner.os }}-playwright
 
       - name: Install Node env
         run: npm ci

@@ -1,0 +1,21 @@
+name: Build app
+
+on: 
+  workflow_call:
+
+jobs: 
+  call-cache:
+    name: "Cache deps"
+    uses: ./.github/workflows/cache-deps.yml
+
+  build-app: 
+    name: Build Localhost env
+    runs-on: ubuntu-latest
+    needs: [call-cache]
+
+    steps:
+      - name: Build
+        run: |
+          server-output: $(npm run build)
+          echo: "CLI output: $server-output"
+
