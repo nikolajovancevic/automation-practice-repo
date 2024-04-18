@@ -31,7 +31,12 @@ jobs:
           ref: ${{ github.head_ref }}
 
       - name: Build Local
-        run: npm run build
+        run: npm run build &
+
+      - name: Wait for server to start
+        run: |
+          timeout 10 bash -c 'until echo > /dev/tcp/localhost/3000; do sleep 1; done'
+          echo "Server is up!"
 
       - name: Run tests
         run: echo "RUNNING TESTS NOW..."
