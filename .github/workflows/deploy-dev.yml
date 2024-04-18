@@ -19,7 +19,7 @@ concurrency:
 jobs: 
   call-build-and-tests:
     name: "Build & Test"
-    uses: ./.github/workflows/test.yml
+    uses: ./.github/workflows/build-and-test.yml
 
   deploy-dev:
     needs: [call-build-and-tests]
