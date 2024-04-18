@@ -31,7 +31,9 @@ jobs:
           ref: ${{ github.head_ref }}
 
       - name: Build Local
-        run: npm run build &
+        run: |
+          cd test-app
+          npm run build &
 
       - name: Wait for server to start
         run: |

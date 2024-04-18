@@ -4,7 +4,7 @@
   "description": "Add description",
   "main": "index.js",
   "scripts": {
-    "build": "node test-app/server.js",
+    "build": "node server.js",
     "format": "npx prettier . --write",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
