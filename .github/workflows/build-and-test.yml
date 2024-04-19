@@ -1,8 +1,10 @@
-name: Execute tests
+name: Build and Execute tests
 
 on: 
   workflow_call:
   workflow_dispatch:
+  push:
+    branches: develop
 
 concurrency: 
   group: ${{ github.workflow }}-${{ github.ref }}
