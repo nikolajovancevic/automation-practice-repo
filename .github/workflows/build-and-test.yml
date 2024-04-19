@@ -35,7 +35,7 @@ jobs:
       - name: Build Local
         run: |
           cd test-app
-          npm run build &
+          node server.js &
 
       - name: Wait for server to start
         run: |
