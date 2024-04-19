@@ -26,5 +26,5 @@ jobs:
   call-tests:
     needs: [build-env]
     name: Execute tests
-    uses: './automation-tests/.github/workflows/execute-tests.yml' 
+    uses: './.github/workflows/format.yml' 
     
