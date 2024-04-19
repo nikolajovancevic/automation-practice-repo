@@ -1,7 +1,6 @@
 name: Build and Test
 
 on: 
-  workflow_call:
   workflow_dispatch:
   push:
     branches: develop
@@ -11,38 +10,70 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  # call-format: 
-  #   name: "Format Code Before Tests"
-  #   uses: ./.github/workflows/format.yml
+    build-env:
+      name: "Build ENV and execute tests"
+      runs-on: ubuntu-latest
 
-  call-dependencies: 
-    name: "Cache deps"
-    uses: ./.github/workflows/cache-deps.yml
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v4
+          with:
+            ref: ${{ github.head_ref }}
 
-  build-and-execute-tests:
-    needs: [call-dependencies]
+        - name: Build Local
+          run: |
+            cd test-app
+            node server.js &
+
+    cache-node-and-playwright:
+      needs: [build-env]
+      name: Setup Node env & Playwright
     
+      runs-on: ubuntu-latest
 
-    name: "Build ENV and execute tests"
-    runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v4
+          with:
+            path: './automation-tests'
 
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          ref: ${{ github.head_ref }}
+        - uses: actions/setup-node@v4
+          id: cache-node
+          with:
+            node-version: 20
+            cache: "npm"
 
-      - name: Build Local
-        run: |
-          cd test-app
-          node server.js &
+        - name: Store Playwright version
+          id: playwright-version
+          run: echo "::set-output name=version::$(npm ls @playwright/test | grep @playwright | sed 's/.*@//')" 
+          working-directory: ./automation-tests
+          
+        - name: Cache Playwright binnaries
+          uses: actions/cache@v3
+          id: cache-playwright
+          with:
+            path: |
+              ~/.cache/ms-playwright
+            key: ${{ runner.os }}-playwright    
 
-      - name: Wait for server to start
-        run: |
-          timeout 10 bash -c 'until echo > /dev/tcp/localhost/3000; do sleep 1; done'
-          echo "Server is up!"
+        - name: Install Node env
+          run: npm ci
+          working-directory: ./automation-tests
+          
+        - name: Install Playwright Browsers
+          run: npx playwright install --with-deps
+          if: steps.cache-playwright.outputs.cache-hit != 'true'
+          working-directory: ./automation-tests
 
-      - name: Run tests
-        run: |
-          cd automation-tests
-          npm run test        
+    execute-tests:
+      needs: [cache-node-and-playwright]
+      name: Execute tests
+      runs-on: ubuntu-latest
+
+      steps:
+        - uses: actions/checkout@v4
+          with: 
+            path: ./automation-tests
+
+        - run: npm run test
+          working-directory: ./automation-tests
+      
