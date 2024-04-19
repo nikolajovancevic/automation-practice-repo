@@ -36,6 +36,8 @@ jobs:
           with:
             path: './automation-tests'
 
+        - run: tree
+
         - uses: actions/setup-node@v4
           id: cache-node
           with:
