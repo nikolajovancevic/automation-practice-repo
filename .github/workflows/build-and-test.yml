@@ -24,13 +24,13 @@ jobs:
           cd test-app
           node server.js &
 
-  call-format:
-    needs: [build-env]
-    name: Format Code
-    uses: './.github/workflows/format.yml'
-    secrets: inherit
+  # call-format:
+  #   needs: [build-env]
+  #   name: Format Code
+  #   uses: './.github/workflows/format.yml'
+  #   secrets: inherit
 
   call-tests:
-    needs: [build-env, call-format]
+    needs: [build-env]
     name: Execute tests
     uses: "./.github/workflows/execute-tests.yml"
