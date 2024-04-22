@@ -19,10 +19,10 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
 
-      - name: Build Local
-        run: |
-          cd test-app
-          node server.js &
+      # - name: Build Local
+      #   run: |
+      #     cd test-app
+      #     node server.js &
 
   # call-format:
   #   needs: [build-env]
@@ -30,7 +30,40 @@ jobs:
   #   uses: './.github/workflows/format.yml'
   #   secrets: inherit
 
-  call-tests:
-    needs: [build-env]
-    name: Execute tests
-    uses: "./.github/workflows/execute-tests.yml"
+  # call-tests:
+  #   needs: [build-env]
+  #   name: Execute tests
+  #   uses: "./.github/workflows/execute-tests.yml"
+
+      - uses: actions/setup-node@v4
+        id: cache-node
+        with:
+          node-version: 20
+          cache: "npm"
+
+      - name: Store Playwright version
+        id: playwright-version
+        run: echo "::set-output name=version::$(npm ls @playwright/test | grep @playwright | sed 's/.*@//')"
+
+      - name: Cache Playwright binnaries
+        uses: actions/cache@v3
+        id: cache-playwright
+        with:
+          path: |
+            ~/.cache/ms-playwright
+          key: ${{ runner.os }}-playwright
+
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
+        if: steps.cache-playwright.outputs.cache-hit != 'true'
+
+      - name: Install Node env
+        run: npm ci
+
+      - name: Build Local
+        run: |
+          cd test-app
+          node server.js &
+
+      - name: Execute tests
+        run: npm run test
