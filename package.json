@@ -4,9 +4,8 @@
   "description": "Add description",
   "main": "index.js",
   "scripts": {
-    "build": "node server.js",
     "format": "npx prettier . --write",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx playwright test landing-page"
   },
   "repository": {
     "type": "git",
@@ -19,6 +18,8 @@
   },
   "homepage": "https://github.com/nikolajovancevic/automating-stuff#readme",
   "devDependencies": {
+    "@playwright/test": "^1.43.1",
+    "@types/node": "^20.12.7",
     "prettier": "3.2.5"
   }
 }

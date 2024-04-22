@@ -1,7 +1,10 @@
 name: Format
 
-on: 
+on:
   workflow_call:
+    secrets:
+      token:
+        required: true
 
 jobs:
   format-code:
@@ -14,8 +17,10 @@ jobs:
         with:
           # Make sure the actual branch is checked out when running on pull requests
           ref: ${{ github.head_ref }}
+          token: ${{ secrets.TOKEN }}
 
       - name: Prettify code
         uses: creyD/prettier_action@v4.3
         with:
           prettier_options: --write **/*.{ts,js,md,yml}
+          github_token: ${{ secrets.TOKEN }}

@@ -1,44 +1,53 @@
-name: Execute tests
+name: Build Local and Test
 
-on: 
-  workflow_call:
+on:
   workflow_dispatch:
+  push:
+    branches: develop
 
-concurrency: 
+concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  # call-format: 
-  #   name: "Format Code Before Tests"
-  #   uses: ./.github/workflows/format.yml
-
-  call-dependencies: 
-    name: "Cache deps"
-    uses: ./.github/workflows/cache-deps.yml
-
-  build-and-execute-tests:
-    needs: [call-dependencies]
-    
-
-    name: "Build Local and execute tests"
+  build-and-test:
+    name: "Build ENV and execute tests"
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref }}
 
+      - uses: actions/setup-node@v4
+        id: cache-node
+        with:
+          node-version: 20
+          cache: "npm"
+
+      - name: Store Playwright version
+        id: playwright-version
+        run: echo "::set-output name=version::$(npm ls @playwright/test | grep @playwright | sed 's/.*@//')"
+
+      - name: Cache Playwright binnaries
+        uses: actions/cache@v3
+        id: cache-playwright
+        with:
+          path: |
+            ~/.cache/ms-playwright
+          key: ${{ runner.os }}-playwright
+
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
+        if: steps.cache-playwright.outputs.cache-hit != 'true'
+
+      - name: Install Node env
+        run: npm ci
+
       - name: Build Local
         run: |
           cd test-app
-          npm run build &
+          node server.js &
 
-      - name: Wait for server to start
-        run: |
-          timeout 10 bash -c 'until echo > /dev/tcp/localhost/3000; do sleep 1; done'
-          echo "Server is up!"
-
-      - name: Run tests
-        run: echo "RUNNING TESTS NOW..."
+      - name: Execute tests
+        run: npm run test
