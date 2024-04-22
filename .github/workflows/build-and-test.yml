@@ -27,7 +27,7 @@ jobs:
   call-format:
     needs: [build-env]
     name: Format Code
-    uses: './.github/workflows/format.yml'
+    uses: "./.github/workflows/format.yml"
     secrets: inherit
 
   call-tests:

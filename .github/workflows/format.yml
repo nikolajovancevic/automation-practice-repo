@@ -2,8 +2,8 @@ name: Format
 
 on:
   workflow_call:
-    secrets: 
-      token: 
+    secrets:
+      token:
         required: true
 
 jobs:
