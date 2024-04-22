@@ -4,7 +4,13 @@ version: 2.1
 orbs:
   node: circleci/node@5
 jobs:
+  build: 
+    machine:
+      image: ubuntu-2004:202010-01
+    resource_class: medium
+
   test-node:
+    needs: [build]
     # Install node dependencies and run tests
     executor: node/default
     steps:
@@ -17,9 +23,7 @@ jobs:
       - run: 
           name: Build local env
           command: |
-            ls -a
             cd test-app
-            ls -a
             node server.js &
       - run:
           name: Run tests
