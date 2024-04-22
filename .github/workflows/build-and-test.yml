@@ -23,7 +23,7 @@ jobs:
           cd test-app
           node server.js &
 
-  # call-tests:
-  #   needs: [build-env]
-  #   name: Execute tests
-  #   uses: './.github/workflows/format.yml'
+  call-tests:
+    needs: [build-env]
+    name: Execute tests
+    uses: './.github/workflows/execute-tests.yml'

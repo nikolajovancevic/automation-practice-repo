@@ -4,8 +4,7 @@
   "description": "Add description",
   "main": "index.js",
   "scripts": {
-    "format": "npx prettier . --write",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "format": "npx prettier . --write"
   },
   "repository": {
     "type": "git",
@@ -18,6 +17,8 @@
   },
   "homepage": "https://github.com/nikolajovancevic/automating-stuff#readme",
   "devDependencies": {
+    "@playwright/test": "^1.43.1",
+    "@types/node": "^20.12.7",
     "prettier": "3.2.5"
   }
 }
