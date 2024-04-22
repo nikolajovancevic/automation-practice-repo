@@ -1,4 +1,4 @@
-name: Build and Test
+name: Build Local and Test
 
 on:
   workflow_dispatch:
@@ -10,30 +10,14 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build-env:
-    name: "Build ENV"
+  build-and-test:
+    name: "Build ENV and execute tests"
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref }}
-
-      # - name: Build Local
-      #   run: |
-      #     cd test-app
-      #     node server.js &
-
-  # call-format:
-  #   needs: [build-env]
-  #   name: Format Code
-  #   uses: './.github/workflows/format.yml'
-  #   secrets: inherit
-
-  # call-tests:
-  #   needs: [build-env]
-  #   name: Execute tests
-  #   uses: "./.github/workflows/execute-tests.yml"
 
       - uses: actions/setup-node@v4
         id: cache-node
