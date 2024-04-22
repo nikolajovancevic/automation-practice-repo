@@ -1,11 +1,11 @@
 name: Build and Test
 
-on: 
+on:
   workflow_dispatch:
   push:
     branches: develop
 
-concurrency: 
+concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
@@ -22,8 +22,8 @@ jobs:
         run: |
           cd test-app
           node server.js &
-  
+
   # call-tests:
   #   needs: [build-env]
   #   name: Execute tests
-  #   uses: './.github/workflows/format.yml' 
+  #   uses: './.github/workflows/format.yml'
