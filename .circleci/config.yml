@@ -11,12 +11,9 @@ jobs:
       - checkout
       - node/install-packages:
           pkg-manager: npm
-      - run:
-          name: Install deps
-          command: npx playwright install
-      - run:
-          name: Run tests
-          command: npm test --passWithNoTests
+      - call-build-and-tests:
+          name: "Build & Test"
+          uses: ./.github/workflows/build-and-test.yml
   deploy:
     # This is an example deploy job, not actually used by the workflow
     docker:
