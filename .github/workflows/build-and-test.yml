@@ -18,6 +18,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref }}
+
       - name: Build Local
         run: |
           cd test-app
@@ -27,8 +28,9 @@ jobs:
     needs: [build-env]
     name: Format Code
     uses: './.github/workflows/format.yml'
+    secrets: inherit
 
   call-tests:
-    needs: [build-env]
+    needs: [build-env, call-format]
     name: Execute tests
     uses: "./.github/workflows/execute-tests.yml"
