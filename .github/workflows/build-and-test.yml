@@ -24,6 +24,10 @@ jobs:
           node server.js &
   
   call-tests:
+    permissions:
+      pull-requests: write 
+      contents: write
+      
     needs: [build-env]
     name: Execute tests
     uses: './.github/workflows/format.yml' 
