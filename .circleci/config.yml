@@ -19,6 +19,7 @@ jobs:
           command: |
             ls -a
             cd test-app
+            ls -a
             node server.js &
       - run:
           name: Run tests
