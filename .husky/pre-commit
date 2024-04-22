@@ -1,0 +1,5 @@
+#! /bin/bash/env sh
+
+. "$(dirname -- "$0")/_/husky.sh"
+
+npm run typecheck && npm run format
