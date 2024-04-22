@@ -17,6 +17,7 @@ jobs:
       - run: 
           name: Build local env
           command: |
+            tree
             cd test-app
             node server.js &
       - run:
