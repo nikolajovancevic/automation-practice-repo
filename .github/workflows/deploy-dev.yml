@@ -12,11 +12,11 @@ on:
           - dev
           - stage
 
-concurrency: 
+concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}-${{ inputs.env }} # no multiple runs of this workflow for the same branch & same env
   cancel-in-progress: true
 
-jobs: 
+jobs:
   call-build-and-tests:
     name: "Build & Test"
     uses: ./.github/workflows/build-and-test.yml
@@ -28,8 +28,3 @@ jobs:
     steps:
       - name: Deploy
         run: echo "deployment code..."
-    
-  
-
-    
-      

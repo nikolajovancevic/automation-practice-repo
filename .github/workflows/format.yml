@@ -1,6 +1,6 @@
 name: Format
 
-on: 
+on:
   workflow_call:
   push:
     branches: develop
