@@ -52,22 +52,9 @@ jobs:
         run: npm ci
 
       - name: Build Local
-        # uses: JarvusInnovations/background-action@v1
-        run: | 
-          npm run local &
-          until $(curl --output /dev/null --silent --head --fail http://localhost:3000); do
-            printf '.'
-            sleep 1
-          done
-        # background: true
-
-      - name: Wait for Server to Start
-        run: |
-          until $(curl --output /dev/null --silent --head --fail http://localhost:3000); do
-            printf '.'
-            sleep 1
-          done
-        timeout-minutes: 5
+        uses: JarvusInnovations/background-action@v1
+        with:
+          run: npm run local
 
       - name: Execute tests
         run: npm run test
