@@ -55,6 +55,8 @@ jobs:
         run: |
           cd app
           node server.js &
+          echo "ping localhost"
+          wget localhost:3000
 
       - name: Execute tests
         run: npm run test
