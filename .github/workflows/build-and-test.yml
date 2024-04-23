@@ -51,10 +51,10 @@ jobs:
       - name: Install Node env
         run: npm ci
 
-      # - name: Build Local
-      #   run: |
-      #     cd test-app
-      #     node server.js &
+      - name: Build Local
+        run: |
+          cd test-app
+          node server.js &
 
       - name: Execute tests
         run: npm run test
