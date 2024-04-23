@@ -14,6 +14,6 @@ jobs:
 
       - name: Build Local
         run: |
-          cd test-app
+          cd app
           node server.js &
           echo "LOCALHOST RUNNING"
