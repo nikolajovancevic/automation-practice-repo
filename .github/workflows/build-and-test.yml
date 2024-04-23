@@ -10,12 +10,12 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  call-local:
-    name: Local
-    uses: "./.github/workflows/build-env.yml"
+  # call-local:
+  #   name: Local
+  #   uses: "./.github/workflows/build-env.yml"
 
   execute-test:
-    needs: [call-local]
+    # needs: [call-local]
 
     name: "Execute tests"
     runs-on: ubuntu-latest
