@@ -15,11 +15,8 @@ jobs:
     uses: "./.github/workflows/build-env.yml"
 
   execute-test:
-    needs: [call-local]
-
-    name: "Execute tests"
     runs-on: ubuntu-latest
-
+    needs: call-local
     steps:
       - name: Checkout
         uses: actions/checkout@v4
