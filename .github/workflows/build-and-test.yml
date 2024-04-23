@@ -53,13 +53,9 @@ jobs:
 
       - name: Build Local
         run: |
-          npm run local & 
-          echo "print now"
+          npm run local && sleep 1 & 
+          echo "print after starting local"
           ls
-          echo "going back"
-          cd ..
-          ls
-          echo "run tests"
           npm run test
 
       - name: Ping local
