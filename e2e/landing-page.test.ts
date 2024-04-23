@@ -5,7 +5,7 @@ test("Check Landing page text", async ({ page }) => {
   
   await page.waitForTimeout(1000)
   console.log("opend bloxico")
-  await page.goto("https://localhost:3000/");
+  await page.goto("http://localhost:3000/");
   console.log("opend localhost")
 
   await page.waitForTimeout(1000)
