@@ -20,6 +20,9 @@ jobs:
     name: "Execute tests"
     runs-on: ubuntu-latest
 
+    env: 
+      PORT: 3000
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -55,6 +58,8 @@ jobs:
         uses: JarvusInnovations/background-action@v1
         with:
           run: npm run local
+          wait-on: |
+            http://localhost:${{ env.PORT }}
 
       - name: Execute tests
         run: npm run test
