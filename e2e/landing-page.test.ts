@@ -1,6 +1,8 @@
 import { test, expect } from "@playwright/test";
 
 test("Check Landing page text", async ({ page }) => {
+  await page.waitForTimeout(10000)
+  console.log("timeout expired")
   await page.goto("/");
 
   await expect(page.getByTestId("page-title-text")).toHaveText(
