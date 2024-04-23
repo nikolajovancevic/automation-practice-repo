@@ -10,13 +10,21 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  call-local:
+  start-local:
     name: Local
-    uses: "./.github/workflows/build-env.yml"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Start local
+        run: npm run local
+
+      - name: Ping local
+        run: wget localhost:3000
 
   execute-test:
     runs-on: ubuntu-latest
-    needs: call-local
+    needs: start-local
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -47,11 +55,6 @@ jobs:
 
       - name: Install Node env
         run: npm ci
-
-      - name: Ping local
-        run: |
-          echo "ping localhost"
-          wget localhost:3000
 # 
       - name: Execute tests
         run: npm run test
