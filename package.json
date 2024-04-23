@@ -9,7 +9,8 @@
     "format:fix": "prettier --write .",
     "lint": "next lint",
     "test": "npx playwright test landing-page",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "local": "cd app && node server.js"
   },
   "repository": {
     "type": "git",
