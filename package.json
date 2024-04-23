@@ -4,8 +4,12 @@
   "description": "Add description",
   "main": "index.js",
   "scripts": {
-    "format": "npx prettier . --write",
-    "test": "npx playwright test landing-page"
+    "typecheck": "tsc",
+    "format": "prettier . --check",
+    "format:fix": "prettier --write .",
+    "lint": "next lint",
+    "test": "npx playwright test landing-page",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -20,6 +24,15 @@
   "devDependencies": {
     "@playwright/test": "^1.43.1",
     "@types/node": "^20.12.7",
-    "prettier": "3.2.5"
+    "@types/react": "18.2.79",
+    "eslint": "^9.1.0",
+    "eslint-config-next": "14.2.2",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "prettier": "3.2.5",
+    "typescript": "5.4.5"
+  },
+  "dependencies": {
+    "next": "^14.2.2"
   }
 }
