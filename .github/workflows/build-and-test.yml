@@ -54,7 +54,7 @@ jobs:
       - name: Build Local
         # uses: JarvusInnovations/background-action@v1
         run: | 
-          npm run local
+          npm run local &
           until $(curl --output /dev/null --silent --head --fail http://localhost:3000); do
             printf '.'
             sleep 1
