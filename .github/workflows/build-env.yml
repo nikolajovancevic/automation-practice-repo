@@ -13,7 +13,7 @@ jobs:
           ref: ${{ github.head_ref }}
 
       - name: Build Local
-        run: npm run local
+        run: npm run local &
       
       - name: Ping local
         run: |
