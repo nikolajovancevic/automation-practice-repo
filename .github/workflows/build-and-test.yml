@@ -10,9 +10,16 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build-and-test:
-    name: "Build ENV and execute tests"
+  call-local:
+    name: Local
+    uses: "./.github/workflows/build-env.yml"
+
+  execute-test:
+    needs: [call-local]
+
+    name: "Execute tests"
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -44,10 +51,10 @@ jobs:
       - name: Install Node env
         run: npm ci
 
-      - name: Build Local
-        run: |
-          cd test-app
-          node server.js &
+      # - name: Build Local
+      #   run: |
+      #     cd test-app
+      #     node server.js &
 
       - name: Execute tests
         run: npm run test

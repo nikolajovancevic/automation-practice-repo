@@ -1,30 +1,30 @@
-name: Deploy
+# name: Deploy
 
-on:
-  workflow_dispatch:
-    inputs:
-      env:
-        description: Deploy to env
-        required: true
-        default: dev
-        type: choice
-        options:
-          - dev
-          - stage
+# on:
+#   workflow_dispatch:
+#     inputs:
+#       env:
+#         description: Deploy to env
+#         required: true
+#         default: dev
+#         type: choice
+#         options:
+#           - dev
+#           - stage
 
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}-${{ inputs.env }} # no multiple runs of this workflow for the same branch & same env
-  cancel-in-progress: true
+# concurrency:
+#   group: ${{ github.workflow }}-${{ github.ref }}-${{ inputs.env }} # no multiple runs of this workflow for the same branch & same env
+#   cancel-in-progress: true
 
-jobs:
-  call-build-and-tests:
-    name: "Build & Test"
-    uses: ./.github/workflows/build-and-test.yml
+# jobs:
+#   call-build-and-tests:
+#     name: "Build & Test"
+#     uses: ./.github/workflows/build-and-test.yml
 
-  deploy-dev:
-    needs: [call-build-and-tests]
-    runs-on: ubuntu-latest
+#   deploy-dev:
+#     needs: [call-build-and-tests]
+#     runs-on: ubuntu-latest
 
-    steps:
-      - name: Deploy
-        run: echo "deployment code..."
+#     steps:
+#       - name: Deploy
+#         run: echo "deployment code..."
