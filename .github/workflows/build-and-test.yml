@@ -15,6 +15,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+
       - name: Start local
         run: npm run local
 
@@ -26,11 +31,6 @@ jobs:
     needs: start-local
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          ref: ${{ github.head_ref }}
-
       - uses: actions/setup-node@v4
         id: cache-node
         with:
