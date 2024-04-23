@@ -21,7 +21,7 @@ jobs:
           ref: ${{ github.head_ref }}
 
       - name: Start local
-        run: npm run local
+        run: npm run local &
 
       - name: Ping local
         run: wget localhost:3000
