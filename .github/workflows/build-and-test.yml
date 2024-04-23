@@ -53,7 +53,7 @@ jobs:
 
       - name: Build Local
         run: |
-          cd test-app
+          cd app
           node server.js &
 
       - name: Execute tests
