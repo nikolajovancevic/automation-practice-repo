@@ -55,7 +55,7 @@ jobs:
         run: |
           cd app
           tree
-          node server.js
+          node server.js &
           echo "ping localhost"
           wget localhost:3000
 
