@@ -48,9 +48,10 @@ jobs:
       - name: Install Node env
         run: npm ci
 
-      # - name: Build Local
-      #   run: |
-      #     npm run local & 
+      - name: Ping local
+        run: |
+          echo "ping localhost"
+          wget localhost:3000
 # 
       - name: Execute tests
         run: npm run test
