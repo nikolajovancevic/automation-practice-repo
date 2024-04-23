@@ -51,19 +51,20 @@ jobs:
       - name: Install Node env
         run: npm ci
 
+      - name: Start tmux session
+        run: |
+          sudo apt-get update
+          sudo apt-get install tmux -y
+          tmux new-session -d -s mysession
+          tmux send-keys -t mysession 'cd app && node server.js' C-m
+
       - name: Build Local
         run: |
-          cd app
-          tree
-          node server.js &
           echo "ping localhost"
           wget localhost:3000
 
       - name: Execute tests
-        if: always()
-        run: | 
-          tree
-          npm run test
+        run: npm run test
 
       - uses: actions/upload-artifact@v4
         if: always()
