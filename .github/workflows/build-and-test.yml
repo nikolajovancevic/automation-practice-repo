@@ -54,13 +54,14 @@ jobs:
       - name: Build Local
         run: |
           npm run local &
+
+      - name: Ping local
+        run: |
           echo "ping localhost"
           wget localhost:3000
-          echo "execute tests"
-          npm run test
-
-      # - name: Execute tests
-        # run: npm run test
+# 
+      - name: Execute tests
+        run: npm run test
 
       - uses: actions/upload-artifact@v4
         if: always()
