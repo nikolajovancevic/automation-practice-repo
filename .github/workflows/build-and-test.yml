@@ -59,6 +59,7 @@ jobs:
         run: |
           echo "ping localhost"
           wget localhost:3000
+          npm run test
 # 
       # - name: Execute tests
       #   run: npm run test
