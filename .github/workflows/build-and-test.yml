@@ -53,7 +53,7 @@ jobs:
 
       - name: Build Local
         run: |
-          npm run local
+          npm run local &
           echo "ping localhost"
           wget localhost:3000
           echo "execute tests"
