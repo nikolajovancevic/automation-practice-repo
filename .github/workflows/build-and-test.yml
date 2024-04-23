@@ -54,7 +54,9 @@ jobs:
       - name: Build Local
         run: |
           npm run local & 
+          ls
           cd ..
+          ls
           npm run test
 
       - name: Ping local
