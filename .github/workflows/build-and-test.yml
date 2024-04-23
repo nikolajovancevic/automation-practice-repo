@@ -31,6 +31,11 @@ jobs:
     needs: start-local
 
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          
       - uses: actions/setup-node@v4
         id: cache-node
         with:
