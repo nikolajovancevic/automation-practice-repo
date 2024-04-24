@@ -8,6 +8,20 @@
       ci/cd flow in general.
     </p>
 
-    <button>Click</button>
+    <div id="container">
+      <button onclick="showTextOnClick()" id="button">Click</button>
+      <div id="text" style="display: none">୧༼ಠ益ಠ༽୨ NOW WE RIOT ୧༼ಠ益ಠ༽୨</div>
+    </div>
+
+    <script>
+      function showTextOnClick() {
+        var container = document.getElementById("container");
+        var button = document.getElementById("button");
+        var text = document.getElementById("text");
+
+        button.style.display = "none";
+        text.style.display = "block";
+      }
+    </script>
   </body>
 </html>
