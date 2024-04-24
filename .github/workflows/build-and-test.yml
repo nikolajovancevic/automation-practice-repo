@@ -66,12 +66,11 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           disable_web_page_preview: true
-          format: <a href="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})">Link to GH Action</a>
+          format: markdown
           message: |
             Develop - All check have passed!
             
-            Link to GH action:
-            https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+            [Link to GH action](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}))
 
       - name: Build and Test Failed
         if: failure()
@@ -80,11 +79,9 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           disable_web_page_preview: true
-          format: <a href="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})">Link to GH Action</a>
+          format: markdown
           message: |
             Develop - All check have failed!
           
-            Link to GH action:
-            https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
-
+            [Link to GH action](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}))
 
