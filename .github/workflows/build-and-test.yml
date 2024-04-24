@@ -66,7 +66,7 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           disable_web_page_preview: true
-          format: (Link to GH Action)
+          format: <a href="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})">Link to GH Action</a>
           message: |
             Develop - All check have passed!
             
@@ -80,7 +80,7 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           disable_web_page_preview: true
-          # format: (Link to GH Action)[https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}]
+          format: <a href="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})">Link to GH Action</a>
           message: |
             Develop - All check have failed!
           
