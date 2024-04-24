@@ -68,9 +68,7 @@ jobs:
           message: |
             Develop - All check have passed!
             
-            `${{ github.actor }}` pushed to Develop.
-
-            See action: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+            <https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}|Link to GH action.>
 
       - name: Build and Test Failed
         if: failure()
@@ -81,9 +79,7 @@ jobs:
           message: |
             Develop - All check have failed!
           
-            `${{ github.actor }}` pushed to Develop.
-
-            See action: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+            <https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}|Link to GH action.>
 
 
 
