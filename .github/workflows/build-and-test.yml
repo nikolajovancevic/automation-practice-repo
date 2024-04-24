@@ -66,6 +66,7 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           disable_web_page_preview: true
+          format: (Link to GH Action)[https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}]
           message: |
             Develop - All check have passed!
             
@@ -79,6 +80,7 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           disable_web_page_preview: true
+          format: (Link to GH Action)[https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}]
           message: |
             Develop - All check have failed!
           
