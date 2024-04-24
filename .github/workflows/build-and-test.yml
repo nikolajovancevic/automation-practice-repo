@@ -68,7 +68,7 @@ jobs:
           message: |
             Develop - All check have passed!
             
-            <https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}|Link to GH action.>
+            [Link to GH action.](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
 
       - name: Build and Test Failed
         if: failure()
@@ -79,8 +79,7 @@ jobs:
           message: |
             Develop - All check have failed!
           
-            <https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}|Link to GH action.>
-
+            [Link to GH action.](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
 
 
 
