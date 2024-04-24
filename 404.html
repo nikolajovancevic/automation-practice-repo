@@ -1,69 +1,61 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>404 BITCH</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Chango&family=Roboto:wght@300&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      body {
-        background-size: cover;
-        font-family: "Roboto", "sans-serif";
-      }
-      main {
-        display: flex;
-        height: 100vh;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-      }
-      .header-404 {
-        font-family: "Chango", cursive;
-        font-size: 48px;
-      }
-      .content-404 {
-        text-align: center;
-      }
-    </style>
-  </head>
-  <body>
-    <main>
-      <h4 class="header-404">404</h4>
-      <div class="content-404">PAGE NOT FOUND BITCH!</div>
-      <p>
-        <a href="#" id="click-for-riot">Click here for no reason</a>
-      </p>
-    </main>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 BITCH</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" />
+<link href="https://fonts.googleapis.com/css2?family=Chango&family=Roboto:wght@300&display=swap" rel="stylesheet" />
+<style>
+  body {
+    background-size: cover;
+    font-family: "Roboto", "sans-serif";
+  }
+  main {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .header-404 {
+    font-family: "Chango", cursive;
+    font-size: 48px;
+  }
+  .content-404 {
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+<main>
+  <h4 class="header-404">404</h4>
+  <div class="content-404">PAGE NOT FOUND BITCH!</div>
+  <p>
+    <a href="#" id="click-for-riot" onclick="hideAndShow()">Click here for no reason</a>
+  </p>
+</main>
 
-    <div id="now-riot-text" style="display: none">
-      ୧༼ಠ益ಠ༽୨ NOW WE RIOT ୧༼ಠ益ಠ༽୨ ୧༼ಠ益ಠ༽୨ NOW WE RIOT ୧༼ಠ益ಠ༽୨ ୧༼ಠ益ಠ༽୨ NOW
-      WE RIOT ୧༼ಠ益ಠ༽୨ ୧༼ಠ益ಠ༽୨ NOW WE RIOT ୧༼ಠ益ಠ༽୨ ୧༼ಠ益ಠ༽୨ NOW WE RIOT
-      ୧༼ಠ益ಠ༽୨ ୧༼ಠ益ಠ༽୨ NOW WE RIOT ୧༼ಠ益ಠ༽୨ ୧༼ಠ益ಠ༽୨ NOW WE RIOT ୧༼ಠ益ಠ༽୨
-    </div>
+<div id="now-riot-text" style="display: none">
+  ୧༼ಠ益ಠ༽୨ NOW WE RIOT ୧༼ಠ益ಠ༽୨
+</div>
 
-    <div id="redirect-to-home" style="display: none">
-      <button onclick="redirectToHomePage()">Hehe, jkjk return to Home.</button>
-    </div>
+<div id="redirect-to-home" style="display: none">
+  <button onclick="redirectToHomePage()">Hehe, jkjk return to Home.</button>
+</div>
 
-    <script>
-      document
-        .getElementById("click-for-riot")
-        .addEventListener("click", function (event) {
-          event.preventDefault();
-          document.getElementById("now-riot-text").style.display = "block";
+<script>
+  function hideAndShow() {
+    document.getElementById("click-for-riot").style.display = "none";
+    document.getElementById("now-riot-text").style.display = "block";
+    setTimeout(function () {
+      document.getElementById("redirect-to-home").style.display = "block";
+    }, 3000);
+  }
 
-          setTimeout(function () {
-            document.getElementById("redirect-to-home").style.display = "block";
-          }, 3000);
-        });
-
-      function redirectToHomePage() {
-        window.location.href = "/";
-      }
-    </script>
-  </body>
+  function redirectToHomePage() {
+    window.location.href = "/";
+  }
+</script>
+</body>
 </html>
