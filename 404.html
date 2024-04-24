@@ -40,16 +40,14 @@
       </p>
     </main>
 
-    <div id="hiddenText" style="display: none">
+    <div id="now-riot-text" style="display: none">
       ୧༼ಠ益ಠ༽୨ NOW WE RIOT ୧༼ಠ益ಠ༽୨ ୧༼ಠ益ಠ༽୨ NOW WE RIOT ୧༼ಠ益ಠ༽୨ ୧༼ಠ益ಠ༽୨ NOW
       WE RIOT ୧༼ಠ益ಠ༽୨ ୧༼ಠ益ಠ༽୨ NOW WE RIOT ୧༼ಠ益ಠ༽୨ ୧༼ಠ益ಠ༽୨ NOW WE RIOT
       ୧༼ಠ益ಠ༽୨ ୧༼ಠ益ಠ༽୨ NOW WE RIOT ୧༼ಠ益ಠ༽୨ ୧༼ಠ益ಠ༽୨ NOW WE RIOT ୧༼ಠ益ಠ༽୨
     </div>
 
     <div id="redirect-to-home" style="display: none">
-      <button onclick="redirectToHomePage()">
-        Hehe, click to return to Home.
-      </button>
+      <button onclick="redirectToHomePage()">Hehe, jkjk return to Home.</button>
     </div>
 
     <script>
@@ -57,7 +55,7 @@
         .getElementById("click-for-riot")
         .addEventListener("click", function (event) {
           event.preventDefault();
-          document.getElementById("hiddenText").style.display = "block";
+          document.getElementById("now-riot-text").style.display = "block";
 
           setTimeout(function () {
             document.getElementById("redirect-to-home").style.display = "block";
