@@ -66,11 +66,11 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
-            ${{ github.actor }} pushed to Develop.
-
             Develop - All check have passed!
+            
+            `${{ github.actor }}` pushed to Develop.
 
-            See changes: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+            See action: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
       - name: Build and Test Failed
         if: failure()
@@ -79,11 +79,11 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
-            ${{ github.actor }} pushed to Develop.
-
             Develop - All check have failed!
+          
+            `${{ github.actor }}` pushed to Develop.
 
-            See changes: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+            See action: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
 
 
