@@ -68,7 +68,7 @@ jobs:
           disable_web_page_preview: true
           format: markdown
           message: |
-            Develop - All check have **PASSED**!
+            Develop - All check have **PASSED**
             
             [Link to GH action](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
 
@@ -81,7 +81,7 @@ jobs:
           disable_web_page_preview: true
           format: markdown
           message: |
-            Develop - All check have **FAILED**!
+            Develop - All check have **FAILED**
           
             [Link to GH action](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
 
