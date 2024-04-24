@@ -28,43 +28,51 @@
       }
       .content404 {
         text-align: center;
+        color: white; /* Set text color to white */
+      }
+      #redirect-to-home {
+        display: none;
+        margin-top: 20px; /* Add some margin for spacing */
+      }
+      #redirect-to-home button {
+        background-color: #ffffff; /* Button background color */
+        color: #000000; /* Button text color */
+        padding: 10px 20px; /* Add some padding */
+        border: none; /* Remove border */
+        cursor: pointer; /* Change cursor on hover */
       }
     </style>
   </head>
   <body>
     <main>
       <h4 class="header404">404</h4>
-      <div class="content-404">PAGE NOT FOUND BITCH!</div>
-      <p>
-        <a href="#" id="click-for-riot">Click here for no reason</a>
-      </p>
+      <div class="content-404" id="now-riot-text" style="display: none">
+        ୧༼ಠ益ಠ༽୨ NOW WE RIOT ୧༼ಠ益ಠ༽୨
+      </div>
+
+      <div id="redirect-to-home">
+        <button onclick="redirectToHomePage()">
+          Hehe, click to return to Home.
+        </button>
+      </div>
+
+      <script>
+        document
+          .getElementById("click-for-riot")
+          .addEventListener("click", function (event) {
+            event.preventDefault();
+            document.getElementById("now-riot-text").style.display = "block";
+
+            setTimeout(function () {
+              document.getElementById("redirect-to-home").style.display =
+                "block";
+            }, 3000);
+          });
+
+        function redirectToHomePage() {
+          window.location.href = "/";
+        }
+      </script>
     </main>
-
-    <div id="now-riot-text" style="display: none">
-      ୧༼ಠ益ಠ༽୨ NOW WE RIOT ୧༼ಠ益ಠ༽୨ ୧༼ಠ益ಠ༽୨ NOW WE RIOT ୧༼ಠ益ಠ༽୨ ୧༼ಠ益ಠ༽୨ NOW
-      WE RIOT ୧༼ಠ益ಠ༽୨ ୧༼ಠ益ಠ༽୨ NOW WE RIOT ୧༼ಠ益ಠ༽୨ ୧༼ಠ益ಠ༽୨ NOW WE RIOT
-      ୧༼ಠ益ಠ༽୨ ୧༼ಠ益ಠ༽୨ NOW WE RIOT ୧༼ಠ益ಠ༽୨ ୧༼ಠ益ಠ༽୨ NOW WE RIOT ୧༼ಠ益ಠ༽୨
-    </div>
-
-    <div id="redirect-to-home" style="display: none">
-      <button onclick="redirectToHomePage()">Hehe, jkjk return to Home.</button>
-    </div>
-
-    <script>
-      document
-        .getElementById("click-for-riot")
-        .addEventListener("click", function (event) {
-          event.preventDefault();
-          document.getElementById("now-riot-text").style.display = "block";
-
-          setTimeout(function () {
-            document.getElementById("redirect-to-home").style.display = "block";
-          }, 3000);
-        });
-
-      function redirectToHomePage() {
-        window.location.href = "/";
-      }
-    </script>
   </body>
 </html>
