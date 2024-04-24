@@ -28,6 +28,12 @@
       .content-404 {
         text-align: center;
       }
+      .now-riot-text {
+        text-align: center;
+      }
+      .redirect-to-home {
+        text-align: left;
+      }
     </style>
   </head>
   <body>
@@ -51,11 +57,10 @@
 
     <script>
       function hideAndShow() {
-        var riotText = document.getElementById("now-riot-text");
         var redirectToHomeButton = document.getElementById("redirect-to-home");
 
         document.getElementById("click-for-riot").style.display = "none";
-        riotText.style.display = "block";
+        document.getElementById("now-riot-text").style.display = "block";
 
         setTimeout(function () {
           redirectToHomeButton.style.display = "block";
