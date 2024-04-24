@@ -68,9 +68,7 @@ jobs:
           disable_web_page_preview: true
           format: markdown
           message: |
-            Develop - All check have **PASSED**
-            
-            [Link to GH action](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
+            Develop - All check have *PASSED*, [check it on this link.](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
 
       - name: Build and Test Failed
         if: failure()
@@ -81,7 +79,5 @@ jobs:
           disable_web_page_preview: true
           format: markdown
           message: |
-            Develop - All check have **FAILED**
-          
-            [Link to GH action](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
+            Develop - Workflow has *FAILED*, [check it on this link.](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
 
