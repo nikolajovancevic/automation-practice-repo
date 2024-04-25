@@ -1,5 +1,9 @@
 # automating-stuff-repo
 
+
+App running on [link.](https://nikolajovancevic.github.io/automating-stuff/)
+
+
 Add permission to script if needed
 
 ```
