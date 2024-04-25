@@ -1,8 +1,6 @@
 name: "PR Title Checker"
 on:
   push: 
-    branches:
-        - develop
   pull_request_target:
     branches:
       - stage
