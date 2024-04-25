@@ -1,4 +1,11 @@
+[![Deploy to Stage env](https://github.com/nikolajovancevic/automating-stuff/actions/workflows/deploy-to-stage.yml/badge.svg?branch=stage&event=push)](https://github.com/nikolajovancevic/automating-stuff/actions/workflows/deploy-to-stage.yml)
+
 # automating-stuff-repo
+
+this should not be pushed BRO
+
+App running on [link.](https://nikolajovancevic.github.io/automating-stuff/)
+
 
 Add permission to script if needed
 
