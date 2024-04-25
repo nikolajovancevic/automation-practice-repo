@@ -67,7 +67,7 @@ jobs:
           disable_web_page_preview: true
           format: markdown
           message: |
-            Tests have *PASSED*. :white_check_mark:
+            Tests have *PASSED*.
             
             Branch name: ${{ env.BRANCH_NAME }} - [check the workflow on this link.](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
 
@@ -80,6 +80,6 @@ jobs:
           disable_web_page_preview: true
           format: markdown
           message: |
-            Tests have *FAILED*. :x:
+            Tests have *FAILED*.
             
             Branch name: ${{ env.BRANCH_NAME }} - [check the workflow on this link.](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})

@@ -58,7 +58,7 @@ jobs:
           disable_web_page_preview: true
           format: markdown
           message: |
-            Deployment to ${{ env.BRANCH_NAME }} env has been *SUCCESSFUL*. :white_check_mark:
+            Deployment to ${{ env.BRANCH_NAME }} env has been *SUCCESSFUL*.
             
             [Check the workflow on this link.](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
 
@@ -71,7 +71,7 @@ jobs:
           disable_web_page_preview: true
           format: markdown
           message: |
-            Deployment to ${{ env.BRANCH_NAME }} env has *FAILED*. :x:
+            Deployment to ${{ env.BRANCH_NAME }} env has *FAILED*.
             
             [Check the workflow on this link.](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
 
