@@ -1,5 +1,8 @@
 name: "PR Title Checker"
 on:
+  push: 
+    branches:
+        - develop
   pull_request_target:
     branches:
       - stage
@@ -10,6 +13,7 @@ on:
       - synchronize
       - ready_for_review
       - review_requested
+      
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
