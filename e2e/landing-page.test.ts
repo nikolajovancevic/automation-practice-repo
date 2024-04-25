@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 
 test("Check Landing page text", async ({ page }) => {
-  await page.goto("/");
+  await page.goto("/automating-stuff/");
 
   await expect(page.getByTestId("page-title-text")).toHaveText(
     "STAGING ENVIRONMENT"
