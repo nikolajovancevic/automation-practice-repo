@@ -2,7 +2,7 @@
 
 # automating-stuff-repo
 
-this should not be pushed because checks have failed
+this should not be pushed BRO
 
 App running on [link.](https://nikolajovancevic.github.io/automating-stuff/)
 
