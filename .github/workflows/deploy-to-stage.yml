@@ -1,0 +1,77 @@
+# Simple workflow for deploying static content to GitHub Pages
+name: Deploy to Stage env
+
+on:
+  push:
+    branches: 
+      - 'stage'
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: 'pages'
+  cancel-in-progress: false
+
+env: 
+  BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
+
+jobs:
+  call-tests:
+    name: Test before deploy
+    uses: './.github/workflows/tests.yml'
+
+  deploy:
+    needs: call-tests
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Upload entire repository
+          path: '.'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Deployment Successful
+        if: success()
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          disable_web_page_preview: true
+          format: markdown
+          message: |
+            Deployment to ${{ env.BRANCH_NAME }} env has been *SUCCESSFUL*.
+            
+            [Check the workflow on this link.](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
+
+      - name: Deployment Failed
+        if: failure()
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          disable_web_page_preview: true
+          format: markdown
+          message: |
+            Deployment to ${{ env.BRANCH_NAME }} env has *FAILED*.
+            
+            [Check the workflow on this link.](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
+
