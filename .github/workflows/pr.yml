@@ -2,6 +2,7 @@ name: "PR Title Checker"
 on:
   pull_request_target:
     branches:
+      - develop
       - stage
     types:
       - opened
