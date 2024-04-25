@@ -1,6 +1,6 @@
 # automating-stuff-repo
 
-this should not be pushed
+this should not be pushed because checks have failed
 
 App running on [link.](https://nikolajovancevic.github.io/automating-stuff/)
 
