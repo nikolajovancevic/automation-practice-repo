@@ -57,28 +57,28 @@ jobs:
           path: test-results/
           retention-days: 30
 
-      - name: Test Passed
-        if: success()
-        uses: appleboy/telegram-action@master
-        with:
-          to: ${{ secrets.TELEGRAM_TO }}
-          token: ${{ secrets.TELEGRAM_TOKEN }}
-          disable_web_page_preview: true
-          format: markdown
-          message: |
-            Tests have *PASSED*.
+      # - name: Test Passed
+      #   if: success()
+      #   uses: appleboy/telegram-action@master
+      #   with:
+      #     to: ${{ secrets.TELEGRAM_TO }}
+      #     token: ${{ secrets.TELEGRAM_TOKEN }}
+      #     disable_web_page_preview: true
+      #     format: markdown
+      #     message: |
+      #       Tests have *PASSED*.
             
-            Branch name: ${{ env.BRANCH_NAME }} - [check the workflow on this link.](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
+      #       Branch name: ${{ env.BRANCH_NAME }} - [check the workflow on this link.](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
 
-      - name: Test Failed
-        if: failure()
-        uses: appleboy/telegram-action@master
-        with:
-          to: ${{ secrets.TELEGRAM_TO }}
-          token: ${{ secrets.TELEGRAM_TOKEN }}
-          disable_web_page_preview: true
-          format: markdown
-          message: |
-            Tests have *FAILED*.
+      # - name: Test Failed
+      #   if: failure()
+      #   uses: appleboy/telegram-action@master
+      #   with:
+      #     to: ${{ secrets.TELEGRAM_TO }}
+      #     token: ${{ secrets.TELEGRAM_TOKEN }}
+      #     disable_web_page_preview: true
+      #     format: markdown
+      #     message: |
+      #       Tests have *FAILED*.
             
-            Branch name: ${{ env.BRANCH_NAME }} - [check the workflow on this link.](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
+      #       Branch name: ${{ env.BRANCH_NAME }} - [check the workflow on this link.](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
