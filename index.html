@@ -3,12 +3,13 @@
   <head>
     <style>
       body {
-        margin: 0;
-        padding: 0;
+        margin: 100;
+        padding: 100;
         background-image: url("website-content/racoon-pedro.gif");
-        background-size: cover;
-        background-repeat: repeat;
+        background-size: 100%;
+        background-repeat: no-repeat;
         background-attachment: fixed;
+        background-position: center;
       }
       #container {
         margin-top: 50px; /* Example: Adjusting the margin-top to prevent content from being hidden by the background */
@@ -31,9 +32,9 @@
     </style>
   </head>
   <body>
-    <h1 data-testid="page-title-text">STAGING ENVIRONMENT</h1>
+    <h1 style="color: red" data-testid="page-title-text">STAGING ENVIRONMENT</h1>
 
-    <p data-testid="description-text">
+    <p style="color: red" data-testid="description-text">
       This environment is used to practice deployment via GitActions, as well as
       ci/cd flow in general.
     </p>
@@ -63,7 +64,22 @@
           document.getElementById("version").textContent = version;
         })
         .catch((error) => console.error("Error fetching package.json:", error));
+
+      // Fetch package.json file
+      fetch("package.json")
+        .then((response) => response.json())
+        .then((data) => {
+          // Extract version from package.json
+          const version = data.version;
+          // Update the HTML element with the version
+          document.getElementById("version").textContent = version;
+        })
+        .catch((error) => console.error("Error fetching package.json:", error));
     </script>
+
+    <footer id="footer" class="footer">
+      <span id="version"></span>
+    </footer>
 
     <footer id="footer" class="footer">
       <span id="version"></span>
