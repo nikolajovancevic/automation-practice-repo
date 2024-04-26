@@ -5,13 +5,28 @@
       body {
         margin: 0;
         padding: 0;
-        background-image: url('website-content/racoon-pedro.gif');
-        background-size: cover; 
+        background-image: url("website-content/racoon-pedro.gif");
+        background-size: cover;
         background-repeat: repeat;
         background-attachment: fixed;
       }
-        #container {
+      #container {
         margin-top: 50px; /* Example: Adjusting the margin-top to prevent content from being hidden by the background */
+      }
+
+      .footer {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        background-color: #f0f0f0;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+      }
+
+      .version-info {
+        margin-bottom: 5px;
       }
     </style>
   </head>
@@ -37,21 +52,21 @@
         button.style.display = "none";
         text.style.display = "block";
       }
+
+      // Fetch package.json file
+      fetch("package.json")
+        .then((response) => response.json())
+        .then((data) => {
+          // Extract version from package.json
+          const version = data.version;
+          // Update the HTML element with the version
+          document.getElementById("version").textContent = version;
+        })
+        .catch((error) => console.error("Error fetching package.json:", error));
     </script>
 
-    <footer class="footer">
-      <div class="links"></div>
-      <a
-        class="btn--remix"
-        target="_top"
-        href="https://www.youtube.com/watch?v=ZdY27ocD3XM"
-      >
-        <img
-          src=""
-          alt=""
-        />
-        ^^
-      </a>
+    <footer id="footer" class="footer">
+      <span id="version"></span>
     </footer>
   </body>
 </html>
