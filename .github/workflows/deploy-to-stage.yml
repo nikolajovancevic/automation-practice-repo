@@ -27,28 +27,34 @@ env:
 jobs:
   call-tests:
     name: Test before deploy
-    uses: './.github/workflows/tests.yml'
+    uses: ./.github/workflows/tests.yml
 
   deploy:
     needs: call-tests
+
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload entire repository
           path: '.'
+          
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
 
+        # Notifications
       - name: Deployment Successful
         if: success()
         uses: appleboy/telegram-action@master
@@ -59,7 +65,7 @@ jobs:
           format: markdown
           message: |
             Deployment to ${{ env.BRANCH_NAME }} env has been *SUCCESSFUL*.
-            
+
             [Check the workflow on this link.](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
 
       - name: Deployment Failed
@@ -72,6 +78,11 @@ jobs:
           format: markdown
           message: |
             Deployment to ${{ env.BRANCH_NAME }} env has *FAILED*.
-            
+
             [Check the workflow on this link.](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
 
+  call-release:
+    needs: [call-tests, deploy]
+    if: ${{ github.ref_protected == true }}
+    uses: ./.github/workflows/release.yml
+    secrets: inherit
