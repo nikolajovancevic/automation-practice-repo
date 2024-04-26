@@ -1,15 +1,14 @@
 {
   "name": "automating-stuff",
   "version": "1.0.0",
-  "description": "Add description",
+  "description": "Automating Stuff.",
   "main": "index.js",
   "scripts": {
     "typecheck": "tsc",
     "format": "prettier . --check",
     "format:fix": "prettier --write .",
     "lint": "next lint",
-    "test": "npx playwright test landing-page",
-    "local": "cd app && node server.js"
+    "test": "npx playwright test landing-page"
   },
   "repository": {
     "type": "git",
@@ -25,9 +24,7 @@
     "@playwright/test": "^1.43.1",
     "@types/node": "^20.12.7",
     "prettier": "3.2.5",
+    "semantic-release": "^23.0.8",
     "typescript": "5.4.5"
-  },
-  "dependencies": {
-    "wait-on": "^7.2.0"
   }
 }
