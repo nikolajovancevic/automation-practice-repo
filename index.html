@@ -1,83 +1,29 @@
 <!doctype html>
 <html>
   <head>
-    <style>
-      body {
-        margin: 100;
-        padding: 100;
-        background-image: url("website-content/racoon-pedro.gif");
-        background-size: 100%;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-position: center;
-      }
-      #container {
-        margin-top: 50px; /* Example: Adjusting the margin-top to prevent content from being hidden by the background */
-      }
-
-      .footer {
-        position: fixed;
-        bottom: 0;
-        right: 0;
-        background-color: #f0f0f0;
-        padding: 10px;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-      }
-
-      .version-info {
-        margin-bottom: 5px;
-      }
-    </style>
+    <link rel="stylesheet" type="text/css" href="front-end/style.css" />
+    <script src="front-end/script.js"></script>
   </head>
+
   <body>
-    <h1 style="color: red" data-testid="page-title-text">STAGING ENVIRONMENT</h1>
-
-    <p style="color: red" data-testid="description-text">
-      This environment is used to practice deployment via GitActions, as well as
-      ci/cd flow in general.
-    </p>
-
-    <div id="container">
-      <button onclick="showTextOnClick()" id="button">Click</button>
-      <div id="text" style="display: none; color: red;">୧༼ಠ益ಠ༽୨ NOW WE RIOT ୧༼ಠ益ಠ༽୨</div>
+    <div class="header" data-testid="staging-header">
+      <h2>STAGING ENVIRONMENT</h2>
     </div>
 
-    <script>
-      function showTextOnClick() {
-        var container = document.getElementById("container");
-        var button = document.getElementById("button");
-        var text = document.getElementById("text");
+    <div class="text-content" data-testid="description-text">
+      <p>This environment is used to practice deployment via GitActions, as well as
+        ci/cd flow in general.</p>
+    </div>
 
-        button.style.display = "none";
-        text.style.display = "block";
-      }
-
-      // Fetch package.json file
-      fetch("package.json")
-        .then((response) => response.json())
-        .then((data) => {
-          // Extract version from package.json
-          const version = data.version;
-          // Update the HTML element with the version
-          document.getElementById("version").textContent = version;
-        })
-        .catch((error) => console.error("Error fetching package.json:", error));
-
-      // Fetch package.json file
-      fetch("package.json")
-        .then((response) => response.json())
-        .then((data) => {
-          // Extract version from package.json
-          const version = data.version;
-          // Update the HTML element with the version
-          document.getElementById("version").textContent = version;
-        })
-        .catch((error) => console.error("Error fetching package.json:", error));
-    </script>
+    <div id="button-container">
+      <button onclick="showTextOnClick()" id="button">Click for riot</button>
+      <div id="button-text">
+        ୧༼ಠ益ಠ༽୨ NOW WE RIOT ୧༼ಠ益ಠ༽୨
+      </div>
+    </div>
 
     <footer id="footer" class="footer">
+      <p>୧༼ಠ益ಠ༽୨</p>
       <span id="version"></span>
     </footer>
   </body>
