@@ -7,7 +7,6 @@
     "typecheck": "tsc",
     "format": "prettier . --check",
     "format:fix": "prettier --write .",
-    "lint": "next lint",
     "test": "npx playwright test landing-page"
   },
   "repository": {
