@@ -2,8 +2,27 @@
   "branches": ["develop", "stage"],
   "plugins": [
     "@semantic-release/commit-analyzer",
-    "@semantic-release/release-notes-generator",
-    "@semantic-release/npm"
+    [
+      "@semantic-release/changelog",
+      {
+        "changelogTitle": "# Changelog"
+      }
+    ],
+    "@semantic-release/npm",
+    [
+      "@semantic-release/release-notes-generator",
+      {
+        "presetConfig": true
+      }
+    ],
+    [
+			"@semantic-release/git",
+			{
+				"assets": ["package.json", "CHANGELOG.md"],
+				"message": "chore(release): ${nextRelease.version} [semantic-release]\n\n${nextRelease.notes}"
+			}
+		],
+    "@semantic-release/github"
   ],
   "publish": [
     {
