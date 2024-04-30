@@ -3,7 +3,7 @@ import { test, expect } from "@playwright/test";
 test("Check Landing page text", async ({ page }) => {
   await page.goto("/automating-stuff/");
 
-  await expect(page.getByTestId("page-title-text")).toHaveText(
+  await expect(page.getByTestId("staging-header")).toHaveText(
     "STAGING ENVIRONMENT"
   );
   await expect(page.getByTestId("description-text")).toHaveText(

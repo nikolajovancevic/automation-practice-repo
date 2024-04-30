@@ -1,0 +1,70 @@
+body {
+  background-image: url("./website-content/racoon-pedro.gif");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.header,
+.text-content,
+#button-text,
+#button-container {
+  padding: 0px;
+  background: #030504;
+  color: white;
+  text-align: center;
+}
+
+.header {
+  font-size: 30px;
+}
+
+.text-content,
+#button-text {
+  font-size: 18px;
+}
+
+#button-text {
+  display: none;
+  font-size: 20px;
+  padding: 10px 10px;
+}
+
+#button-container {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#button {
+  background-color: black;
+  color: white;
+  width: auto;
+  font-size: 20px;
+  padding: 10px 10px;
+  margin: 0px;
+}
+
+.footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  right: 0;
+  background-color: black;
+  color: white;
+  padding: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer p {
+  margin: 5px;
+}
+
+.version {
+  margin-bottom: 5px;
+  margin-left: auto;
+}
