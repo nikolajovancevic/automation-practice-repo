@@ -7,6 +7,6 @@ test("Check Landing page text", async ({ page }) => {
     "Test Environment"
   );
   await expect(page.getByTestId("description-text")).toHaveText(
-    "Dzon's environment used to practice deployment via GitActions, as well as CI/CD flow."
+    "Dzon's test environment for practicing CI/CD, GitActions, semantic release, etc."
   );
 });
