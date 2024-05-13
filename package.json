@@ -4,6 +4,7 @@
   "description": "Automating Stuff.",
   "main": "index.js",
   "scripts": {
+    "start-local": "cd front-end && node server.js",
     "typecheck": "tsc",
     "format": "prettier . --check",
     "format:fix": "prettier --write .",
