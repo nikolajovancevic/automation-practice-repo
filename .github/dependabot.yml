@@ -12,7 +12,7 @@ updates:
     schedule:
       interval: "weekly"
     commit-message:
-      prefix: "deps(chore): "
+      prefix: "chore(deps): "
 
   # Maintain dependencies for NPM
   - package-ecosystem: "npm"
@@ -25,4 +25,4 @@ updates:
         update-types:
           - version-update:semver-patch
     commit-message:
-      prefix: "deps(chore): "
+      prefix: "chore(deps): "
