@@ -48,6 +48,16 @@ jobs:
           npm ci
           npx playwright install
 
+      - name: Start local env
+        run: |
+          cd front-end
+          node server.js & 
+
+      - name: Ping local
+        run: |
+          echo "ping localhost"
+          wget localhost:3000
+
       - name: Execute tests
         run: npm run test
 
