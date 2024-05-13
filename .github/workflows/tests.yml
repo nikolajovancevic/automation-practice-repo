@@ -39,18 +39,16 @@ jobs:
             ~/.cache/ms-playwright
           key: ${{ runner.os }}-playwright
           
-      - name: Install Node env
-        run: | 
-          npm ci
-          npx playwright install
-
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
         if: steps.cache-playwright.outputs.cache-hit != 'true'
-
+  
+      - name: Install Node env
+        run: npm ci
 
       - name: Start local env
-        run: npm run start-local &
+        run: |
+          npm run start-local &
 
       - name: Ping local
         run: |
