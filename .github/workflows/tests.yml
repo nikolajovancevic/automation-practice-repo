@@ -44,7 +44,9 @@ jobs:
         if: steps.cache-playwright.outputs.cache-hit != 'true'
 
       - name: Install Node env
-        run: npm ci
+        run: | 
+          npm ci
+          npx playwright install
 
       - name: Execute tests
         run: npm run test
