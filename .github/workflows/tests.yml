@@ -27,10 +27,6 @@ jobs:
           node-version: 20
           cache: 'npm'
 
-      - name: Store Playwright version
-        id: playwright-version
-        run: echo "::set-output name=version::$(npm ls @playwright/test | grep @playwright | sed 's/.*@//')"
-
       - name: Cache Playwright binnaries
         uses: actions/cache@v4
         id: cache-playwright
@@ -49,12 +45,7 @@ jobs:
       - name: Start local env
         run: |
           npm run start-local &
-
-      - name: Ping local
-        run: |
-          echo "ping localhost"
-          wget http://127.0.0.1:3000/
-
+          
       - name: Execute tests
         run: npm run test
 
