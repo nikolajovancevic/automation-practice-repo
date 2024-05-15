@@ -1,5 +1,12 @@
 # Changelog
 
+# 1.0.0 (2024-05-15)
+
+
+### Bug Fixes
+
+* workflow trigger ([dd19bd8](https://github.com/nikolajovancevic/automating-stuff/commit/dd19bd8117c632c960cfe51117713e48b3438e94))
+
 # [1.5.0](https://github.com/nikolajovancevic/automating-stuff/compare/v1.4.1...v1.5.0) (2024-04-30)
 
 ### Features
