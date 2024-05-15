@@ -10,7 +10,7 @@ on:
       - synchronize
       - ready_for_review
       - review_requested
-      
+
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
