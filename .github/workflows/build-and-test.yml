@@ -30,7 +30,7 @@ jobs:
         run: echo "::set-output name=version::$(npm ls @playwright/test | grep @playwright | sed 's/.*@//')"
 
       - name: Cache Playwright binnaries
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         id: cache-playwright
         with:
           path: |
