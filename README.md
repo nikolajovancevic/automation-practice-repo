@@ -1,4 +1,4 @@
-[![Deploy](https://github.com/nikolajovancevic/automating-stuff/actions/workflows/deploy.yml/badge.svg?branch=develop&event=push)](https://github.com/nikolajovancevic/automating-stuff/actions/workflows/deploy.yml)
+[![Deploy to test env](https://github.com/nikolajovancevic/automating-stuff/actions/workflows/deploy.yml/badge.svg?branch=develop&event=push)](https://github.com/nikolajovancevic/automating-stuff/actions/workflows/deploy.yml)
 
 # automating-stuff-repo
 
