@@ -19,7 +19,7 @@ const server = http.createServer((req, res) => {
   // Get the file path from the URL
   let filePath = "." + req.url;
   if (filePath === "./") {
-    filePath = "./front-end/index.html"; // Serve index.html if root URL is requested
+    filePath = "./index.html"; // Serve index.html if root URL is requested
   }
 
   // Get the file extension

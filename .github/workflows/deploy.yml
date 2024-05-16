@@ -80,9 +80,3 @@ jobs:
             Deployment to ${{ env.BRANCH_NAME }} env has *FAILED*.
 
             [Check the workflow on this link.](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
-
-  call-release:
-    needs: [call-tests, deploy]
-    if: ${{ github.ref_protected == true }}
-    uses: ./.github/workflows/release.yml
-    secrets: inherit
