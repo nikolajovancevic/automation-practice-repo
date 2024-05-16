@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/nikolajovancevic/automating-stuff/compare/v1.0.0...v1.0.1) (2024-05-16)
+
+
+### Bug Fixes
+
+* moved index to root ([e27737a](https://github.com/nikolajovancevic/automating-stuff/commit/e27737abd5992b89002ed869179a2e7d356304bb))
+
 # 1.0.0 (2024-05-15)
 
 
