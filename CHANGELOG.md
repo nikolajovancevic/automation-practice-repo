@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/nikolajovancevic/automating-stuff/compare/v1.0.1...v1.0.2) (2024-05-16)
+
+
+### Bug Fixes
+
+* fe style, workflows ([#53](https://github.com/nikolajovancevic/automating-stuff/issues/53)) ([619be1a](https://github.com/nikolajovancevic/automating-stuff/commit/619be1a506184f6dfc36d5c3908874c0a27d15f7))
+
 ## [1.0.1](https://github.com/nikolajovancevic/automating-stuff/compare/v1.0.0...v1.0.1) (2024-05-16)
 
 
