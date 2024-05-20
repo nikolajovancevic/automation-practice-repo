@@ -1,8 +1,9 @@
 name: Release
 on:
-  push: 
-    branches:
-      - develop
+  workflow_run:
+    workflows: ["Deploy to test env"]
+    types:
+      - completed
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
