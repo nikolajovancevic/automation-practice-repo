@@ -1,12 +1,9 @@
 name: Release
 on:
-  push: 
-    branches:
-      - develop
-
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+  workflow_run:
+    workflows: ["Deploy to test env"]
+    types:
+      - completed
 
 permissions:
   contents: write

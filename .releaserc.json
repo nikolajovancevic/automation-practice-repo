@@ -1,9 +1,9 @@
 {
   "branches": ["develop"],
+  "preset": "conventionalcommits",
   "plugins": [
     "@semantic-release/commit-analyzer",
     {
-      "preset": "conventionalcommits",
       "releaseRules": [
         { "type": "fix", "release": "patch" },
         { "type": "refactor", "release": "patch" },
