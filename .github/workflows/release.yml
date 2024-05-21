@@ -5,10 +5,6 @@ on:
     types:
       - completed
 
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
-
 permissions:
   contents: write
   issues: write
@@ -50,29 +46,3 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
         run: npx semantic-release
-
-      - name: Test Passed
-        if: success()
-        uses: appleboy/telegram-action@master
-        with:
-          to: ${{ secrets.TELEGRAM_TO }}
-          token: ${{ secrets.TELEGRAM_TOKEN }}
-          disable_web_page_preview: true
-          format: markdown
-          message: |
-            Release to ${{ env.BRANCH_NAME }} was SUCCESSFUL.
-
-            [Check the workflow on this link.](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
-
-      - name: Test Failed
-        if: failure()
-        uses: appleboy/telegram-action@master
-        with:
-          to: ${{ secrets.TELEGRAM_TO }}
-          token: ${{ secrets.TELEGRAM_TOKEN }}
-          disable_web_page_preview: true
-          format: markdown
-          message: |
-            Release to ${{ env.BRANCH_NAME }} was NOT successful.
-
-            [Check the workflow on this link.](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
