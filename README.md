@@ -13,8 +13,6 @@
 
 Practicing CI/CD, using [Semantic release](https://semantic-release.gitbook.io/semantic-release) for versioning.
 
-
-
 ## Prerequisites
 
 - [Node version](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-22-04)
@@ -26,3 +24,5 @@ Practicing CI/CD, using [Semantic release](https://semantic-release.gitbook.io/s
 ```
 npm i
 ```
+
+TODO add desc
