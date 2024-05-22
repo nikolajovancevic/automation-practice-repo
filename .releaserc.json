@@ -31,12 +31,6 @@
       }
     ],
     [
-      "@semantic-release/release-notes-generator",
-      {
-        "presetConfig": true
-      }
-    ],
-    [
       "@semantic-release/git",
       {
         "assets": ["package.json", "CHANGELOG.md"],
