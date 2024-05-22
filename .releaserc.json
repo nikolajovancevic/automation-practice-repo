@@ -12,19 +12,12 @@
           { "type": "refactor", "release": "patch" },
           { "type": "style", "release": "patch" },
           { "type": "docs", "release": "patch" },
-          { "type": "release", "release": "minor" },
+          { "scope": "release", "release": "minor" },
           { "scope": "no-release", "release": false }
         ],
         "presetConfig": true
       }
     ],
-    [
-			"@semantic-release/changelog",
-			{
-				"changelogFile": "./CHANGELOG.md",
-				"changelogTitle": "# Changelog"
-			}
-		],
     [
       "@semantic-release/npm",
       {
@@ -40,6 +33,13 @@
         }
 			}
     ],
+    [
+			"@semantic-release/changelog",
+			{
+        "changelogFile": "./CHANGELOG.md",
+				"changelogTitle": "# Changelog"
+			}
+		],
     [
       "@semantic-release/git",
       {
