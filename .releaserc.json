@@ -1,10 +1,10 @@
 {
   "branches": ["develop"],
+  "preset": "conventionalcommits",
   "plugins": [
     [
       "@semantic-release/commit-analyzer",
       {
-        "preset": "conventionalcommits",
         "releaseRules": [
           { "type": "fix", "release": "patch" },
           { "type": "refactor", "release": "patch" },
@@ -18,9 +18,15 @@
       }
     ],
     [
+			"@semantic-release/changelog",
+			{
+				"changelogFile": "./CHANGELOG.md",
+				"changelogTitle": "# Changelog"
+			}
+		],
+    [
       "@semantic-release/release-notes-generator",
       {
-        "preset": "conventionalcommits",
         "parserOpts": {
           "noteKeywords": ["BREAKING CHANGE", "BREAKING CHANGES", "BREAKING"]
         },
@@ -29,13 +35,6 @@
         }
       }
     ],
-    [
-			"@semantic-release/changelog",
-			{
-				"changelogFile": "./CHANGELOG.md",
-				"changelogTitle": "# Changelog"
-			}
-		],
     [
       "@semantic-release/npm",
       {
