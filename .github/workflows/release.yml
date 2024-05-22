@@ -4,6 +4,7 @@ on:
     workflows: ["Deploy to test env"]
     types:
       - completed
+  workflow_dispatch:
 
 permissions:
   contents: write
