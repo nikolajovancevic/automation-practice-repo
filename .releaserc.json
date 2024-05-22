@@ -18,20 +18,18 @@
       }
     ],
     [
-      [
-        "@semantic-release/release-notes-generator",
-        {
-          "parserOpts": {
-            "noteKeywords": ["BREAKING CHANGE", "BREAKING CHANGES", "BREAKING"]
-          },
-          "writerOpts": {
-            "commitsSort": ["subject", "scope"]
-          }
+      "@semantic-release/release-notes-generator",
+      {
+        "parserOpts": {
+          "noteKeywords": ["BREAKING CHANGE", "BREAKING CHANGES", "BREAKING"]
         },
+        "writerOpts": {
+          "commitsSort": ["subject", "scope"]
+        }
+      },
       {
         "presetConfig": true
       }
-      ]
     ],
     [
       "@semantic-release/changelog",
