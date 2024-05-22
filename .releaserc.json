@@ -10,13 +10,16 @@
           { "type": "refactor", "release": "patch" },
           { "type": "style", "release": "patch" },
           { "type": "docs", "release": "patch" },
+          { "type": "release", "release": "minor" },
           { "scope": "no-release", "release": false }
+
         ],
         "parserOpts": {
           "noteKeywords": ["BREAKING CHANGE", "BREAKING CHANGES"]
         }
       }
     ],
+    "@semantic-release/release-notes-generator",
     [
 			"@semantic-release/changelog",
 			{
