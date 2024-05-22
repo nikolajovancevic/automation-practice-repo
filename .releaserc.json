@@ -1,5 +1,7 @@
 {
   "branches": ["develop"],
+  "tagFormat": "${version}",
+	"ci": true,
   "preset": "conventionalcommits",
   "plugins": [
     [
@@ -12,11 +14,8 @@
           { "type": "docs", "release": "patch" },
           { "type": "release", "release": "minor" },
           { "scope": "no-release", "release": false }
-
         ],
-        "parserOpts": {
-          "noteKeywords": ["BREAKING CHANGE", "BREAKING CHANGES"]
-        }
+        "presetConfig": true
       }
     ],
     [
@@ -35,7 +34,10 @@
     [
       "@semantic-release/release-notes-generator",
       {
-				"presetConfig": true
+				"presetConfig": true,
+        "writerOpts": {
+          "commitsSort": ["subject", "scope"]
+        }
 			}
     ],
     [
