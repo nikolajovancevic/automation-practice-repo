@@ -30,11 +30,12 @@
       }
     ],
     [
-      "@semantic-release/changelog",
-      {
-        "changelogTitle": "# Changelog"
-      }
-    ],
+			"@semantic-release/changelog",
+			{
+				"changelogFile": "./CHANGELOG.md",
+				"changelogTitle": "# Changelog"
+			}
+		],
     [
       "@semantic-release/npm",
       {
