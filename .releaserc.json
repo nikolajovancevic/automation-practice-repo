@@ -1,7 +1,5 @@
 {
   "branches": ["develop"],
-  "tagFormat": "${version}",
-  "ci": true,
   "plugins": [
     [
       "@semantic-release/commit-analyzer",
@@ -20,12 +18,6 @@
     ],
     [
       "@semantic-release/release-notes-generator",
-      {
-        "preset": "conventionalcommits",
-        "writerOpts": {
-          "commitsSort": ["subject", "scope"]
-        }
-      }
     ],
     [
       "@semantic-release/changelog",
