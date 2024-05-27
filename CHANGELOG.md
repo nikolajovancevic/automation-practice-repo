@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.0.4](https://github.com/nikolajovancevic/automating-stuff/compare/v1.0.3...v1.0.4) (2024-05-27)
+
+
+### Bug Fixes
+
+* fixing release config ([046ab5e](https://github.com/nikolajovancevic/automating-stuff/commit/046ab5eb3110eee8347f55012b8643e293e5966f))
+* **no-release:** fixing release config ([168e78f](https://github.com/nikolajovancevic/automating-stuff/commit/168e78faeb2954ea8a598d080e736a5cdcfb8930))
+* **no-release:** fixing release config ([bcba917](https://github.com/nikolajovancevic/automating-stuff/commit/bcba91783750a278cde6126db144ba4bad715c14))
+* **no-release:** fixing release config again ([0a5cdd0](https://github.com/nikolajovancevic/automating-stuff/commit/0a5cdd01ecdcc36ec8d9dcc7c652be24c0d46657))
+* release config ([541b124](https://github.com/nikolajovancevic/automating-stuff/commit/541b124dfc0b558f7930defd50901c47bf93d689))
+* workflow ([2464400](https://github.com/nikolajovancevic/automating-stuff/commit/2464400c57f57d698a37bf980b283cc3037ecdf2))
+* workflow ([eee6d56](https://github.com/nikolajovancevic/automating-stuff/commit/eee6d565fffa9d1b1af5c127f1bef0c154c825ae))
+
 ## [1.0.2](https://github.com/nikolajovancevic/automating-stuff/compare/v1.0.1...v1.0.2) (2024-05-16)
 
 
