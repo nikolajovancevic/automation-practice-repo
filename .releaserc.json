@@ -1,18 +1,22 @@
 {
   "branches": ["develop"],
+  "tagFormat": "${version}",
+  "ci": false,
   "plugins": [
     [
       "@semantic-release/commit-analyzer",
       {
         "preset": "conventionalcommits",
         "releaseRules": [
+          { "breaking": true, "release": "major" },
+					{ "type": "feat", "release": "minor" },
+          { "scope": "release", "release": "minor" },
+          { "scope": "no-release", "release": false },
           { "type": "fix", "release": "patch" },
           { "type": "refactor", "release": "patch" },
           { "type": "style", "release": "patch" },
           { "type": "docs", "release": "patch" },
-          { "type": "chore", "release": false },
-          { "scope": "release", "release": "minor" },
-          { "scope": "no-release", "release": false }
+          { "type": "chore", "release": false }
         ]
       }
     ],
