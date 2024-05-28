@@ -1,6 +1,6 @@
 name: "PR Title Checker"
 on:
-  pull_request_target:
+  pull_request:
     branches:
       - develop
     types:
@@ -42,5 +42,4 @@ jobs:
             security
             release
             no-release
-          # Configure that a scope must always be provided.
           requireScope: false
