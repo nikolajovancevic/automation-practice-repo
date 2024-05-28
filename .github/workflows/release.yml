@@ -1,4 +1,5 @@
-name: Release
+name: Release new version
+
 on:
   workflow_run:
     workflows: ["Deploy to test env"]
