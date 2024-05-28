@@ -22,8 +22,11 @@ jobs:
       uses: peter-evans/create-pull-request@v6
       with: 
         token: ${{ secrets.GITHUB_TOKEN }}
+        commit-message: ${{ github.event.head_commit.message }}
         author: ${{ github.actor }} <${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com>
-        base: ${{ github.head_ref }}
-        delete-branch: true
-        labels: automated pr
+        branch: auto_branch/patch
         title: Automated PR
+        labels: automated pr
+        delete-branch: true
+        signoff: false
+        
