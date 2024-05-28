@@ -1,5 +1,12 @@
 # Changelog
 
+# [1.1.0](https://github.com/nikolajovancevic/automating-stuff/compare/1.0.5...1.1.0) (2024-05-28)
+
+
+### Features
+
+* auto pr workflow ([#58](https://github.com/nikolajovancevic/automating-stuff/issues/58)) ([37ceaba](https://github.com/nikolajovancevic/automating-stuff/commit/37ceabaf71c9365aa632492da66b25a3a62708c9))
+
 ## [1.0.5](https://github.com/nikolajovancevic/automating-stuff/compare/v1.0.4...1.0.5) (2024-05-27)
 
 ## [1.0.4](https://github.com/nikolajovancevic/automating-stuff/compare/v1.0.3...v1.0.4) (2024-05-27)
