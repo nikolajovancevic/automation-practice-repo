@@ -27,6 +27,6 @@ jobs:
         branch: auto_branch/patch
         title: Automated PR
         labels: automated pr
-        delete-branch: true
+        delete-branch: false
         signoff: false
         
