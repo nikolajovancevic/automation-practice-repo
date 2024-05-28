@@ -1,5 +1,7 @@
 # Changelog
 
+## [1.1.3](https://github.com/nikolajovancevic/automating-stuff/compare/1.1.2...1.1.3) (2024-05-28)
+
 ## [1.1.2](https://github.com/nikolajovancevic/automating-stuff/compare/1.1.1...1.1.2) (2024-05-28)
 
 ## [1.1.1](https://github.com/nikolajovancevic/automating-stuff/compare/1.1.0...1.1.1) (2024-05-28)
