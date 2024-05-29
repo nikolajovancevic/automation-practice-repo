@@ -4,10 +4,6 @@ on:
   push:
     branches:
       - develop
-  # workflow_run:
-  #   workflows: ["Deploy to test env"]
-  #   types:
-  #     - completed
   workflow_dispatch:
 
 permissions:
