@@ -2,14 +2,11 @@
 name: Deploy to test env
 
 on:
-  # push:
-  #   branches:
-  #     - develop
   workflow_dispatch:
-  workflow_run:
-    workflows: ["Release new version"]
-    types:
-      - completed
+  # workflow_run:
+  #   workflows: ["Release new version"]
+  #   types:
+  #     - completed
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
