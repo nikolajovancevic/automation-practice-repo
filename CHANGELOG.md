@@ -1,5 +1,12 @@
 # Changelog
 
+# [1.2.0](https://github.com/nikolajovancevic/automating-stuff/compare/1.1.3...1.2.0) (2024-05-29)
+
+
+### Features
+
+* better server option ([#61](https://github.com/nikolajovancevic/automating-stuff/issues/61)) ([8cdb417](https://github.com/nikolajovancevic/automating-stuff/commit/8cdb417557b05c051662bca64f39222c738678e2))
+
 ## [1.1.3](https://github.com/nikolajovancevic/automating-stuff/compare/1.1.2...1.1.3) (2024-05-28)
 
 ## [1.1.2](https://github.com/nikolajovancevic/automating-stuff/compare/1.1.1...1.1.2) (2024-05-28)
