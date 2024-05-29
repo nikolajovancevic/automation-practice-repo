@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/nikolajovancevic/automating-stuff/compare/1.2.0...1.2.1) (2024-05-29)
+
+
+### Bug Fixes
+
+* testing release workflow ([#62](https://github.com/nikolajovancevic/automating-stuff/issues/62)) ([9de7e9a](https://github.com/nikolajovancevic/automating-stuff/commit/9de7e9a705705d6953e7fe6937e1860252851a35))
+
 # [1.2.0](https://github.com/nikolajovancevic/automating-stuff/compare/1.1.3...1.2.0) (2024-05-29)
 
 
