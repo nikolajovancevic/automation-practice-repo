@@ -27,4 +27,4 @@ npm i
 
 TODO add desc
 
-Testing - should not trigger release 2x
+Testing - trigger one release now
