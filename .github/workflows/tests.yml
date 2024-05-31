@@ -2,7 +2,16 @@ name: Run Tests
 
 on:
   workflow_dispatch:
-  workflow_call:
+  pull_request:
+    branches:
+      - develop
+    types:
+      - opened
+      - reopened
+      - edited
+      - synchronize
+      - ready_for_review
+      - review_requested
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
