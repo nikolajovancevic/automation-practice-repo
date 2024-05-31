@@ -27,6 +27,4 @@ Practicing CI/CD, using [Semantic release](https://semantic-release.gitbook.io/s
 npm i
 ```
 
-TODO add desc
-
-Testing - still not BREAKING CHANGE
+Testing - BREAKING CHANGE BRO
