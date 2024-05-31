@@ -1,4 +1,4 @@
-name: "PR Title Checker"
+name: PR Title Checker
 on:
   pull_request:
     branches:
@@ -17,7 +17,7 @@ concurrency:
 
 jobs:
   lint-pr:
-    name: "Check PR format"
+    name: Check PR format
     runs-on: ubuntu-latest
 
     steps:

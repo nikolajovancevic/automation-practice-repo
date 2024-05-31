@@ -1,0 +1,48 @@
+name: Lint
+
+on:
+  pull_request:
+    branches:
+      - develop
+    types:
+      - opened
+      - reopened
+      - edited
+      - synchronize
+      - ready_for_review
+      - review_requested
+
+jobs:
+  markdown-linter:
+    name: Link markdown links
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run Markdown linter
+        uses: gaurav-nelson/github-action-markdown-link-check@v1
+        with:
+          config-file: ".github/linters/mlc_config.json"
+          use-quiet-mode: "yes"
+  
+  super-linter:
+    name: Super Linter
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Run Super Linter
+        uses: github/super-linter/slim@v5
+        env:
+          IGNORE_GITIGNORED_FILES: true
+          DEFAULT_BRANCH: develop
+          LINTER_RULES_PATH: ".github/linters"
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+          LOG_LEVEL: WARN
+          VALIDATE_ALL_CODEBASE: true
+          MULTI_STATUS: true
+          VALIDATE_GITHUB_ACTIONS: true
+          VALIDATE_JSONC: true
+          VALIDATE_MARKDOWN: true
+          VALIDATE_TYPESCRIPT_ES: true
+          VALIDATE_YAML: true

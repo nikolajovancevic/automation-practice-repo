@@ -26,13 +26,7 @@ env:
   BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
 
 jobs:
-  call-tests:
-    name: Test before deploy
-    uses: ./.github/workflows/tests.yml
-
   deploy:
-    needs: call-tests
-
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
