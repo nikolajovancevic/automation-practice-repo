@@ -1,5 +1,12 @@
 # Changelog
 
+# [1.4.0](https://github.com/nikolajovancevic/automating-stuff/compare/1.3.0...1.4.0) (2024-05-31)
+
+
+### Features
+
+* change that breaks ([8a682f8](https://github.com/nikolajovancevic/automating-stuff/commit/8a682f88bfac340ebe047417a66d07040803b5cb))
+
 # [1.3.0](https://github.com/nikolajovancevic/automating-stuff/compare/1.2.3...1.3.0) (2024-05-31)
 
 
