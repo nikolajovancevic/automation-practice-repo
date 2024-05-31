@@ -1,5 +1,12 @@
 # Changelog
 
+# [2.0.0](https://github.com/nikolajovancevic/automating-stuff/compare/1.4.0...2.0.0) (2024-05-31)
+
+
+### Features
+
+* **breaking:** should bump major ([b46d869](https://github.com/nikolajovancevic/automating-stuff/commit/b46d86921ab1de832d705b26d414f503a1405ca3))
+
 # [1.4.0](https://github.com/nikolajovancevic/automating-stuff/compare/1.3.0...1.4.0) (2024-05-31)
 
 
