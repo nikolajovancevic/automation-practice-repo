@@ -1,5 +1,12 @@
 # Changelog
 
+# [1.3.0](https://github.com/nikolajovancevic/automating-stuff/compare/1.2.3...1.3.0) (2024-05-31)
+
+
+### Features
+
+* new change /n/n BREAKING CHANGE: serious stuff ([#65](https://github.com/nikolajovancevic/automating-stuff/issues/65)) ([c064b30](https://github.com/nikolajovancevic/automating-stuff/commit/c064b308d318cbef8259bad3dd57b4dd981e9520))
+
 ## [1.2.3](https://github.com/nikolajovancevic/automating-stuff/compare/1.2.2...1.2.3) (2024-05-31)
 
 ## [1.2.1](https://github.com/nikolajovancevic/automating-stuff/compare/1.2.0...1.2.1) (2024-05-29)
