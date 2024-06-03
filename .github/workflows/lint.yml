@@ -36,7 +36,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Run Super Linter
-        uses: github/super-linter/slim@v5
+        uses: github/super-linter/slim@v6
         env:
           IGNORE_GITIGNORED_FILES: true
           DEFAULT_BRANCH: develop
