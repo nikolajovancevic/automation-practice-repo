@@ -1,5 +1,12 @@
 # Changelog
 
+# [2.1.0](https://github.com/nikolajovancevic/automating-stuff/compare/2.0.1...2.1.0) (2024-06-03)
+
+
+### Features
+
+* dependabot auto merge ([39a215e](https://github.com/nikolajovancevic/automating-stuff/commit/39a215e09530b97e3500f090c49dc04ff1ac33b1))
+
 ## [2.0.1](https://github.com/nikolajovancevic/automating-stuff/compare/2.0.0...2.0.1) (2024-06-03)
 
 
