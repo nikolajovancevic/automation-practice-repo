@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.1](https://github.com/nikolajovancevic/automating-stuff/compare/2.0.0...2.0.1) (2024-06-03)
+
+
+### Bug Fixes
+
+* dependabot ([924ba63](https://github.com/nikolajovancevic/automating-stuff/commit/924ba631ba20925110af7b7fd27658a4fa7d3bc8))
+
 # [2.0.0](https://github.com/nikolajovancevic/automating-stuff/compare/1.4.0...2.0.0) (2024-05-31)
 
 
