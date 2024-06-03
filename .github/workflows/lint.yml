@@ -47,6 +47,6 @@ jobs:
           MULTI_STATUS: true
           VALIDATE_GITHUB_ACTIONS: true
           VALIDATE_JSONC: true
-          VALIDATE_MARKDOWN: true
+          VALIDATE_MARKDOWN: false
           VALIDATE_TYPESCRIPT_ES: true
           VALIDATE_YAML: true

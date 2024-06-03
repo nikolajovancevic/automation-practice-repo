@@ -1,6 +1,6 @@
 [![Deploy to test env](https://github.com/nikolajovancevic/automating-stuff/actions/workflows/deploy.yml/badge.svg?branch=develop&event=push)](https://github.com/nikolajovancevic/automating-stuff/actions/workflows/deploy.yml)
 
-[![semantic-release: conventionalcommits](https://img.shields.io/badge/semantic--release-angular-e10079?logo=semantic-release)](https://github.com/semantic-release/semantic-release)
+[![semantic-release: conventionalcommits](https://img.shields.io/badge/semantic--release-conventionalcommits-e10079?logo=semantic-release)](https://github.com/semantic-release/semantic-release)
 
 # Automating Stuff
 

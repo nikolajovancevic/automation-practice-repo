@@ -8,15 +8,15 @@
       {
         "preset": "conventionalcommits",
         "releaseRules": [
-          { "scope": "breaking", "release": "major" },
-          { "type": "feat", "release": "minor" },
-          { "scope": "release", "release": "minor" },
+          { "tag": "breaking", "scope": "breaking", "release": "major" },
+          { "tag": "feat", "type": "feat", "release": "minor" },
+          { "tag": "release", "scope": "release", "release": "minor" },
           { "scope": "no-release", "release": false },
-          { "type": "fix", "release": "patch" },
-          { "type": "refactor", "release": "patch" },
-          { "type": "style", "release": "patch" },
-          { "type": "docs", "release": "patch" },
-          { "type": "chore", "release": false }
+          { "tag": "fix", "type": "fix", "release": "patch" },
+          { "tag": "refactor", "type": "refactor", "release": "patch" },
+          { "tag": "style", "type": "style", "release": "patch" },
+          { "tag": "dosc", "type": "docs", "release": "patch" },
+          { "tag": "chore", "type": "chore", "release": false }
         ]
       }
     ],
