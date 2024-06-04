@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.1](https://github.com/nikolajovancevic/automating-stuff/compare/2.1.0...2.1.1) (2024-06-03)
+
+
+### Bug Fixes
+
+* token ([6835a71](https://github.com/nikolajovancevic/automating-stuff/commit/6835a714edd991c8afcc8142df57fffc98b1f593))
+
 # [2.1.0](https://github.com/nikolajovancevic/automating-stuff/compare/2.0.1...2.1.0) (2024-06-03)
 
 
