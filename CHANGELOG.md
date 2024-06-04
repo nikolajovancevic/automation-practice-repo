@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.4](https://github.com/nikolajovancevic/automating-stuff/compare/2.1.3...2.1.4) (2024-06-04)
+
+
+### Bug Fixes
+
+* workflow naming ([23ead0f](https://github.com/nikolajovancevic/automating-stuff/commit/23ead0f29c066a7ed2ef6858b6391e7f3e92e28a))
+
 ## [2.1.3](https://github.com/nikolajovancevic/automating-stuff/compare/2.1.2...2.1.3) (2024-06-04)
 
 
