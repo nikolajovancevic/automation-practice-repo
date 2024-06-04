@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.1.5](https://github.com/nikolajovancevic/automating-stuff/compare/2.1.4...2.1.5) (2024-06-04)
+
+
+### Bug Fixes
+
+* badge naming ([4d19c0e](https://github.com/nikolajovancevic/automating-stuff/commit/4d19c0ef25f48964d50ea16eeeac0395b609cab0))
+* workflow naming ([af62608](https://github.com/nikolajovancevic/automating-stuff/commit/af62608045801dabc35c904ee03ca8f8300b23af))
+
 ## [2.1.4](https://github.com/nikolajovancevic/automating-stuff/compare/2.1.3...2.1.4) (2024-06-04)
 
 
