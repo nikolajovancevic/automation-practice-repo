@@ -1,6 +1,6 @@
 [![Lint](https://github.com/nikolajovancevic/automating-stuff/actions/workflows/lint.yml/badge.svg?branch=develop&event=push)](https://github.com/nikolajovancevic/automating-stuff/actions/workflows/lint.yml)
 [![Tests](https://github.com/nikolajovancevic/automating-stuff/actions/workflows/tests.yml/badge.svg?branch=develop&event=push)](https://github.com/nikolajovancevic/automating-stuff/actions/workflows/tests.yml)
-[![Deploy to test env](https://github.com/nikolajovancevic/automating-stuff/actions/workflows/deploy.yml/badge.svg?branch=develop)](https://github.com/nikolajovancevic/automating-stuff/actions/workflows/deploy.yml)
+[![Deploy to test env](https://github.com/nikolajovancevic/automating-stuff/actions/workflows/deploy.yml/badge.svg?branch=develop&event=deployment_status)](https://github.com/nikolajovancevic/automating-stuff/actions/workflows/deploy.yml)
 [![semantic-release: conventionalcommits](https://img.shields.io/badge/semantic--release-conventionalcommits-e10079?logo=semantic-release)](https://github.com/semantic-release/semantic-release)
 
 # Automating Stuff
