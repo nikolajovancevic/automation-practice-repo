@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.1.2](https://github.com/nikolajovancevic/automating-stuff/compare/2.1.1...2.1.2) (2024-06-04)
+
+
+### Bug Fixes
+
+* linter workflow ([b191f4a](https://github.com/nikolajovancevic/automating-stuff/commit/b191f4a0ff947468ff3cb155c6df2a911456c3cf))
+* **no-release:** workflows not working ([cdfd8ff](https://github.com/nikolajovancevic/automating-stuff/commit/cdfd8ff6133fd10bc042e59deef918ce0d575001))
+
 ## [2.1.1](https://github.com/nikolajovancevic/automating-stuff/compare/2.1.0...2.1.1) (2024-06-03)
 
 
