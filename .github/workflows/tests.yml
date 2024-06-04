@@ -1,4 +1,4 @@
-name: Tests
+name: Execute tests
 
 on:
   workflow_dispatch:
@@ -22,7 +22,7 @@ env:
 
 jobs:
   execute-test:
-    name: Run tests
+    name: Tests
     runs-on: ubuntu-latest
 
     steps:
