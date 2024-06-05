@@ -1,4 +1,4 @@
-name: Release new version
+name: Release
 
 on:
   push:
@@ -13,7 +13,6 @@ permissions:
 
 jobs:
   release:
-    name: Release
     runs-on: ubuntu-latest
     if: github.actor != 'dependabot[bot]'
 
