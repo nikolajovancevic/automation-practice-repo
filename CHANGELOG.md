@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.8](https://github.com/nikolajovancevic/automating-stuff/compare/2.1.7...2.1.8) (2024-06-05)
+
+
+### Bug Fixes
+
+* fixing workflows and stuff ([e167260](https://github.com/nikolajovancevic/automating-stuff/commit/e167260436df9d6a078b26d6f25e4b56ac95d797))
+
 ## [2.1.7](https://github.com/nikolajovancevic/automating-stuff/compare/2.1.6...2.1.7) (2024-06-04)
 
 

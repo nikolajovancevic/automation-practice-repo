@@ -1,6 +1,6 @@
 {
   "name": "automating-stuff",
-  "version": "2.1.7",
+  "version": "2.1.8",
   "description": "Automating Stuff.",
   "main": "index.js",
   "scripts": {
