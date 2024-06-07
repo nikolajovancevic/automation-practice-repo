@@ -7,25 +7,57 @@
 
 ## Table of Contents
 
-- [App link](https://nikolajovancevic.github.io/automating-stuff/)
 - [Description](#description)
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
+- [Test Development Gudelines](#test-development-guidelines)
 
 ## Description
 
-Practicing CI/CD, using [Semantic release](https://semantic-release.gitbook.io/semantic-release) for versioning.
+Practicing CI/CD on GH using GitActions.
 
-## Prerequisites
+The flow:
+- create PR from branch `feat-1` to `develop`
+- all checks pass - `pr.yml`, `lint.yml`, `tests.yml`. PR must be approved as well.
+- squash and merge PR
+- `release.yml` is being triggered for each push to `develop` branch, based on PR title it will bump new version or not
+- if new version is bumped the tag is being pushed to GH and `CHANGELOG.md` is being updated
+- `deploy.yml` runs if `release.yml` has finished successfully and deploys new version to my [github page](https://nikolajovancevic.github.io/automating-stuff/) hosted on github.  
 
-- [Node version](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-22-04)
-  `v20.8.1`
-- [Playwright](https://playwright.dev/docs/intro)
+Following guidelines of [semver](https://semver.org/) convention. 
 
-## Installation
+For release configuration check `.releaserc.json` file. 
+
+
+## Test Development Guidelines
+
+### **Git**
+
+The source of truth is the `develop` branch, meaning all work should be done in
+relation to it.
+
+Creating new branch example:
 
 ```
-npm i
+git checkout -b feat-short_description
 ```
 
-Testing - BREAKING CHANGE BRO
+### **Commiting**
+Using [Commitizen](https://github.com/commitizen/cz-cli) for more consistent commit messages, as well as compatibility with semantic-release flow in general.
+
+I've added script in `package.json` which will stage changes and initiate the commit:
+```
+npm run commit
+```
+Tech stack 
+[Semantic release](https://semantic-release.gitbook.io/semantic-release).
+
+### **Pull request**
+
+Pull request title should follow [conventional](https://www.conventionalcommits.org/en/v1.0.0/) commits in order for `pr.yml` to pass and for `semantic-release` to work.
+
+Acceptable PR title examples:
+- `feat(breaking): Short pull request description` - bumps MAJOR
+- `feat: Short pull request description` - bumps MINOR
+- `fix: Short pull request description` - bumps PATCH
+- `feat(no-release): Short pull request description` - no release
+
+
