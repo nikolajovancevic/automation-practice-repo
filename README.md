@@ -27,6 +27,7 @@ Following guidelines of [semver](https://semver.org/) convention.
 For release configuration check `.releaserc.json` file. 
 
 Something like this: 
+
 ![Release flow](https://github.com/nikolajovancevic/automating-stuff/blob/develop/the-flow.png)
 
 
