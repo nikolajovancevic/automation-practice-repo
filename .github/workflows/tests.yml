@@ -25,29 +25,29 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      # - name: Checkout
+      #   uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
-        id: cache-node
-        with:
-          node-version: 20
-          cache: "npm"
+      # - uses: actions/setup-node@v4
+      #   id: cache-node
+      #   with:
+      #     node-version: 20
+      #     cache: "npm"
 
-      - name: Cache Playwright binnaries
-        uses: actions/cache@v4
-        id: cache-playwright
-        with:
-          path: |
-            ~/.cache/ms-playwright
-          key: ${{ runner.os }}-playwright
+      # - name: Cache Playwright binnaries
+      #   uses: actions/cache@v4
+      #   id: cache-playwright
+      #   with:
+      #     path: |
+      #       ~/.cache/ms-playwright
+      #     key: ${{ runner.os }}-playwright
 
-      - name: Install Node env
-        run: npm ci
+      # - name: Install Node env
+      #   run: npm ci
 
-      - name: Install Playwright Browsers
-        run: npx playwright install --with-deps
-        if: steps.cache-playwright.outputs.cache-hit != 'true'
+      # - name: Install Playwright Browsers
+      #   run: npx playwright install --with-deps
+      #   if: steps.cache-playwright.outputs.cache-hit != 'true'
 
       - name: Execute tests
         run: |
