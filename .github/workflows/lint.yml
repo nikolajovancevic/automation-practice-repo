@@ -42,7 +42,7 @@ jobs:
           IGNORE_GITIGNORED_FILES: true
           DEFAULT_BRANCH: develop
           LINTER_RULES_PATH: ".github/linters"
-          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+          GITHUB_TOKEN: "${{ secrets.TOKEN }}"
           LOG_LEVEL: WARN
           VALIDATE_ALL_CODEBASE: true
           MULTI_STATUS: true
