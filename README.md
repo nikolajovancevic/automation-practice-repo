@@ -63,5 +63,3 @@ Acceptable PR title examples:
 - `feat: Short pull request description` - bumps MINOR
 - `fix: Short pull request description` - bumps PATCH
 - `feat(no-release): Short pull request description` - no release
-
-
