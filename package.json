@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/nikolajovancevic/automating-stuff#readme",
   "devDependencies": {
-    "@playwright/test": "^1.45.0",
+    "@playwright/test": "^1.46.1",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/commit-analyzer": "^13.0.0",
     "@semantic-release/git": "^10.0.1",
