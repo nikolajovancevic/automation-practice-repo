@@ -39,7 +39,7 @@ jobs:
       - name: Run Super Linter
         uses: github/super-linter/slim@v6
         with: 
-          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}
         env:
           IGNORE_GITIGNORED_FILES: true
           DEFAULT_BRANCH: develop
