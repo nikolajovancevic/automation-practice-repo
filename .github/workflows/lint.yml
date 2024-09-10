@@ -38,9 +38,8 @@ jobs:
           fetch-depth: 0
       - name: Run Super Linter
         uses: github/super-linter/slim@v6
-        with: 
-          GITHUB_TOKEN: ${{ github.token }}
         env:
+          GITHUB_TOKEN: ${{ github.token }}
           IGNORE_GITIGNORED_FILES: true
           DEFAULT_BRANCH: develop
           LINTER_RULES_PATH: ".github/linters"
