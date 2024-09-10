@@ -2,10 +2,15 @@
 name: Dependabot auto-merge
 
 on: 
-  # pull_request:
   workflow_run:
-    workflows: ['PR Title Checker', 'Lint', 'Tests']
-    types: ['completed'] 
+    workflows:
+      - PR Title Checker
+      - Lint
+      - Tests
+    types: 
+      - completed
+    branches: 
+      - develop
 
 permissions:
   contents: write
