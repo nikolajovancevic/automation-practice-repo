@@ -14,7 +14,7 @@ permissions:
 jobs:
   auto-merge-pr:
     runs-on: ubuntu-latest
-    if: github.actor == 'dependabot[bot]'
+    # if: github.actor == 'dependabot[bot]'
 
     steps:
       - name: Dependabot metadata
@@ -26,7 +26,7 @@ jobs:
       - name: Get PR URL
         uses: kceb/pull-request-url-action@v1
         id: pr-url
-        
+
       - run: echo "${{ steps.pr-url.outputs.url }}"
 
       - name: Enable auto-merge for Dependabot PRs
