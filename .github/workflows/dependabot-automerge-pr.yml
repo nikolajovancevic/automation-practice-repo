@@ -1,7 +1,11 @@
 # auto merging PR from dependabot 
 name: Dependabot auto-merge
 
-on: pull_request
+on: 
+  pull_request:
+  workflow_run:
+    workflows: ['PR Title Checker', 'Lint', 'Tests']
+    types: ['completed'] 
 
 permissions:
   contents: write
