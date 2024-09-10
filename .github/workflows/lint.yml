@@ -37,7 +37,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Run Super Linter
-        uses: github/super-linter/slim@v6
+        uses: github/super-linter/slim@v7
         env:
           GITHUB_TOKEN: ${{ github.token }}
           IGNORE_GITIGNORED_FILES: true
