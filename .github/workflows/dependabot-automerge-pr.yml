@@ -29,7 +29,7 @@ jobs:
           github-token: "${{ secrets.TOKEN }}"
 
       - name: Get PR URL
-        uses: kceb/pull-request-url-action@v1
+        uses: kceb/pull-request-url-action@v2
         id: pr-url
 
       - run: echo "${{ steps.pr-url.outputs.url }}"
