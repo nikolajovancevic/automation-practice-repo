@@ -1,0 +1,50 @@
+name: Master Smoke test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  smoke-test:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Store Playwright version to env variable
+        run: |
+          PLAYWRIGHT_VERSION=$(cat package.json \
+          | grep @playwright/test \
+          | head -1 \
+          | awk -F: '{ print $2 }' \
+          | sed 's/[",]//g')
+
+          echo "Playwright version: $PLAYWRIGHT_VERSION"
+
+          $PLAYWRIGHT_VERSION >> $GITHUB_ENV
+
+          echo {{ $env.PLAYWRIGHT_VERSION }}
+
+      - name: Cache Playwright
+        id: cache-playwright
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-browsers-{{ $env.PLAYWRIGHT_VERSION }}
+
+      - name: Clean Install Node
+        run: npm ci
+
+      - name: Install Playwright Browsers
+        if: steps.cache-playwright.outputs.cache-hit != 'true'
+        run: npx playwright install --with-deps
+
+      - name: Run tests
+        run: |
+          echo "Running tests"
