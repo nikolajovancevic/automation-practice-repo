@@ -25,9 +25,7 @@ jobs:
           | awk -F: '{ print $2 }' \
           | sed 's/[",]//g') 
           
-          $PLAYWRIGHT_VERSION >> $GITHUB_ENV
-
-          echo "Playwright version: $PLAYWRIGHT_VERSION
+          echo "Playwright version: $PLAYWRIGHT_VERSION" >> $GITHUB_ENV
 
       - name: Cache Playwright
         id: cache-playwright
