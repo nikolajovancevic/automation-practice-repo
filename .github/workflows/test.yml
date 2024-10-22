@@ -26,7 +26,7 @@ jobs:
           | sed 's/[",]//g') 
           >> $GITHUB_ENV
 
-          echo "Playwright version: $PLAYWRIGHT_VERSION"
+          echo "Playwright version: {{ $env.PLAYWRIGHT_VERSION }}"
 
       - name: Cache Playwright
         id: cache-playwright
