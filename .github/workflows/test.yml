@@ -23,7 +23,8 @@ jobs:
           | grep @playwright/test \
           | head -1 \
           | awk -F: '{ print $2 }' \
-          | sed 's/[",^]//g') 
+          | sed 's/[",^]//g'
+          | xargs) 
           
           echo "Playwright version: $PLAYWRIGHT_VERSION" >> $GITHUB_ENV
 
