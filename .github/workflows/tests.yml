@@ -40,17 +40,17 @@ jobs:
           | grep @playwright/test \
           | head -1 \
           | awk -F: '{ print $2 }' \
-          )
+          | sed 's/[^]//g')
 
       #     echo "Playwright version: $PLAYWRIGHT_VERSION"
       #     echo "PLAYWRIGHT_VERSION=$PLAYWRIGHT_VERSION" >> $GITHUB_ENV
 
       # - name: Cache Playwright
-        # id: cache-playwright
-        # uses: actions/cache@v4
-        # with:
-          # path: ~/.cache/ms-playwright
-          # key: playwright-browsers-${{ env.PLAYWRIGHT_VERSION }}
+      # id: cache-playwright
+      # uses: actions/cache@v4
+      # with:
+      # path: ~/.cache/ms-playwright
+      # key: playwright-browsers-${{ env.PLAYWRIGHT_VERSION }}
 
       # - name: Install Node env
       #   run: npm ci
