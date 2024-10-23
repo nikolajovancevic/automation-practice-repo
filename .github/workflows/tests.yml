@@ -40,9 +40,10 @@ jobs:
           | grep @playwright/test \
           | head -1 \
           | awk -F: '{ print $2 }' \
+          )
 
-          echo "Playwright version: $PLAYWRIGHT_VERSION"
-          echo "PLAYWRIGHT_VERSION=$PLAYWRIGHT_VERSION" >> $GITHUB_ENV
+      #     echo "Playwright version: $PLAYWRIGHT_VERSION"
+      #     echo "PLAYWRIGHT_VERSION=$PLAYWRIGHT_VERSION" >> $GITHUB_ENV
 
       # - name: Cache Playwright
         # id: cache-playwright
