@@ -24,23 +24,23 @@ jobs:
           | head -1 \
           | awk -F: '{ print $2 }' \
           | sed 's/[",^]//g'
-          | xargs) 
           
-          echo "Playwright version: $PLAYWRIGHT_VERSION" >> $GITHUB_ENV
+          echo "Playwright version: $PLAYWRIGHT_VERSION"
+          echo "PLAYWRIGHT_VERSION=$PLAYWRIGHT_VERSION" >> $GITHUB_ENV
 
       - name: Cache Playwright
         id: cache-playwright
         uses: actions/cache@v4
         with:
           path: ~/.cache/ms-playwright
-          key: playwright-browsers-$PLAYWRIGHT_VERSION
+          key: playwright-browsers-${{ env.PLAYWRIGHT_VERSION }}
 
       - name: Clean Install Node
         run: npm ci
 
       - name: Install Playwright Browsers
         if: steps.cache-playwright.outputs.cache-hit != 'true'
-        run: npx playwright install --with-deps
+        run: npx playwright install --with-deps --chrome
 
       - name: Run tests
         run: |
