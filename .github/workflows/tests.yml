@@ -25,29 +25,39 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # - name: Checkout
-      #   uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      # - uses: actions/setup-node@v4
-      #   id: cache-node
-      #   with:
-      #     node-version: 20
-      #     cache: "npm"
+      - uses: actions/setup-node@v4
+        id: cache-node
+        with:
+          node-version: 20
+          cache: "npm"
 
-      # - name: Cache Playwright binnaries
-      #   uses: actions/cache@v4
-      #   id: cache-playwright
-      #   with:
-      #     path: |
-      #       ~/.cache/ms-playwright
-      #     key: ${{ runner.os }}-playwright
+      - name: Store Playwright version to env variable
+        run: |
+          PLAYWRIGHT_VERSION=$(cat package.json \
+          | grep @playwright/test \
+          | head -1 \
+          | awk -F: '{ print $2 }' \
+          | sed 's/[", ^]//g')
 
-      # - name: Install Node env
-      #   run: npm ci
+          echo "Playwright version: $PLAYWRIGHT_VERSION"
+          echo "PLAYWRIGHT_VERSION=$PLAYWRIGHT_VERSION" >> $GITHUB_ENV
 
-      # - name: Install Playwright Browsers
-      #   run: npx playwright install --with-deps
-      #   if: steps.cache-playwright.outputs.cache-hit != 'true'
+      - name: Cache Playwright
+        id: cache-playwright
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-browsers-${{ env.PLAYWRIGHT_VERSION }}
+
+      - name: Install Node env
+        run: npm ci
+
+      - name: Install Playwright Browsers
+        if: steps.cache-playwright.outputs.cache-hit != 'true'
+        run: npx playwright install --with-deps
 
       - name: Execute tests
         run: |
