@@ -7,10 +7,10 @@
     "editor.autoIndent": "advanced",
     "diffEditor.ignoreTrimWhitespace": false,
   },
-  "gitlens.currentLine.enabled": false,
+  "gitlens.currentLine.enabled": true,
   "gitlens.codeLens.enabled": false,
   "indentRainbow.indicatorStyle": "light",
-  "indentRainbow.lightIndicatorStyleLineWidth": 1,
+  "indentRainbow.lightIndicatorStyleLineWidth": 3,
   "indentRainbow.colors": [
     "rgba(255,255,64,0.3)",
     "rgba(127,255,127,0.3)",
