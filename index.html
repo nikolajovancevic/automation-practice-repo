@@ -1,63 +1,50 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Portfolio</title>
-  <link rel="stylesheet" href="fe/style.css">
-  <!-- <link rel="stylesheet" href="fe/hamburger.css"> -->
-  <script src="fe/scripts.js" defer></script>
-</head>
-<body>
-  <!-- <header> -->
-    <!-- <button class="hamburger hamburger--emphatic" type="button">
-      <span class="hamburger-box">
-        <span class="hamburger-inner"></span>
-        <span class="hamburger-inner"></span>
-        <span class="hamburger-inner"></span>
-      </span> -->
-    <!-- </button> -->
-    <!-- <div id="menu">
-      <div id="menu-bar" onclick="menuOnClick()">
-        <div id="bar1" class="bar"></div>
-        <div id="bar2" class="bar"></div>
-        <div id="bar3" class="bar"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Portfolio</title>
+    <link rel="stylesheet" href="fe/style.css" />
+    <script src="fe/scripts.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div clas s="environment"></div>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
-      <nav class="nav" id="nav">
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Blog</a></li>
-        </ul>
-      </nav> 
+    </header>
+    <div class="hero-container">
+      <div class="typewriter">
+        <h1>Nikola Jovancevic</h1>
+      </div>
+      <p id="role" class="hero glitch layers" data-text="role">
+        <span>QA Automation Engineer</span>
+      </p>
     </div>
+    <!-- todo: fix buttons; atm not visible  -->
+    <a class="button-slice" href="#">
+      <div class="top"><span>LinkedIn</span></div>
+      <div class="bottom"><span>Contact</span></div>
+      <div class="dropdown-buttons">
+        <button id="button-linkedin" class="sub-button">LinkedIn</button>
+        <button id="button-github" class="sub-button">GitHub</button>
+      </div>
+    </a>
+
+    <a href="http://linkedin.com/in/nikola-jovancevic-673935193" class="animated-button" target="_blank">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      Contact
+    </a>
     
-    <div class="menu-bg" id="menu-bg"></div -->
-  <!-- </header> -->
-  
-  <div class="hero-container">
-    <div class="environment">
-      <p id="break-counter">Counter: <span id="break-counter">0</span></p>
-
-      <button class="hamburger hamburger--emphatic" type="button">
-        <span class="hamburger-box">
-          <span class="hamburger-inner"></span>
-        </span>
-    </div>
-    
-    <h3 id="role" class="hero glitch layers" data-text="role"><span>QA Automation Engineer</span></h3>
-    <div class="typewriter">
-      <h1>Nikola Jovancevic</h1>
-    </div> 
-
-  </div>
-<footer id="footer" class="footer">
-  <p>୧༼ಠ益ಠ༽୨</p>
-  <a href="fe/pages/page-404.html" id="break-button">Don't.</a>
-  <span id="version"></span>
-</footer>
-
-</body>
-
-</html> 
+    <footer id="footer" class="footer">
+      <p>୧༼ಠ益ಠ༽୨</p>
+      <span id="version"></span>
+    </footer>
+  </body>
+</html>
